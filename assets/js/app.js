@@ -124,6 +124,22 @@
 
   const DEFAULT_PATH = 'killian-lift/README.md';
 
+  // GitHub repo coordinates for "View source" links.
+  const GH_OWNER = 'sbezner';
+  const GH_REPO = 'KillianLift';
+  const GH_BRANCH = 'main';
+  function ghBlobUrl(path) {
+    return 'https://github.com/' + GH_OWNER + '/' + GH_REPO + '/blob/' + GH_BRANCH + '/' + path;
+  }
+  function ghRawUrl(path) {
+    return 'https://raw.githubusercontent.com/' + GH_OWNER + '/' + GH_REPO + '/' + GH_BRANCH + '/' + path;
+  }
+
+  // Build a flat set of known paths from the NAV manifest. Used to decide
+  // whether an inline-code file reference should be auto-linked.
+  const KNOWN_PATHS = new Set();
+  NAV.forEach(g => g.items.forEach(i => KNOWN_PATHS.add(i.path)));
+
   // ---------- ROUTING ----------
   function currentPath() {
     const hash = location.hash.replace(/^#\/?/, '');
@@ -168,13 +184,59 @@
     return out.join('/');
   }
 
+  // "Source on GitHub" badge shown at top of every rendered page.
+  function makeSourceBadge(path) {
+    const wrap = el('div', { class: 'source-badge' });
+    wrap.appendChild(el('span', { class: 'source-path' }, path));
+    const links = el('span', { class: 'source-links' });
+    links.appendChild(el('a', {
+      href: ghBlobUrl(path),
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    }, 'View on GitHub'));
+    links.appendChild(el('span', { class: 'source-sep' }, '|'));
+    links.appendChild(el('a', {
+      href: ghRawUrl(path),
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    }, 'Raw'));
+    wrap.appendChild(links);
+    return wrap;
+  }
+
+  // Walk inline <code> elements in rendered markdown and auto-link any text
+  // that resolves to a known doc, so references like `01-design/specs.md` in
+  // prose become clickable.
+  function linkifyInlineCodeRefs(root, sourcePath) {
+    root.querySelectorAll('code').forEach(code => {
+      // Skip code blocks (inside <pre>)
+      if (code.parentElement && code.parentElement.tagName === 'PRE') return;
+      // Skip if already inside an anchor
+      if (code.closest('a')) return;
+      const txt = (code.textContent || '').trim();
+      if (!txt || txt.length > 200) return;
+      // Only link things that look like a doc/diagram path
+      if (!/\.(md|svg|csv)$/i.test(txt)) return;
+      if (/[\s<>"]/.test(txt)) return;
+      const resolved = resolvePath(sourcePath, txt);
+      if (!KNOWN_PATHS.has(resolved)) return;
+      const a = document.createElement('a');
+      a.setAttribute('href', '#/' + resolved);
+      code.parentNode.insertBefore(a, code);
+      a.appendChild(code);
+    });
+  }
+
   function renderMarkdown(text, sourcePath) {
     // Configure marked for GitHub-style basics
     marked.setOptions({ gfm: true, breaks: false, headerIds: true });
     const html = marked.parse(text);
 
     const wrap = el('div', { class: 'content-wrap' });
-    wrap.innerHTML = html;
+    wrap.appendChild(makeSourceBadge(sourcePath));
+    const body = document.createElement('div');
+    body.innerHTML = html;
+    wrap.appendChild(body);
 
     // Rewrite relative links so they navigate within the SPA
     wrap.querySelectorAll('a[href]').forEach(a => {
@@ -209,11 +271,15 @@
       }
     });
 
+    // Make inline code references like `01-design/specs.md` clickable
+    linkifyInlineCodeRefs(wrap, sourcePath);
+
     return wrap;
   }
 
   function renderSvg(path) {
     const wrap = el('div', { class: 'content-wrap' });
+    wrap.appendChild(makeSourceBadge(path));
     const title = path.split('/').pop().replace(/\.svg$/i, '').replace(/-/g, ' ');
     wrap.appendChild(el('h1', {}, title));
     const embed = el('div', { class: 'svg-embed' }, [
@@ -254,6 +320,7 @@
   function renderCsv(text, path) {
     const rows = parseCsv(text);
     const wrap = el('div', { class: 'content-wrap' });
+    wrap.appendChild(makeSourceBadge(path));
     const title = path.split('/').pop();
     wrap.appendChild(el('h1', {}, title));
     wrap.appendChild(el('p', { class: 'gate-hint' }, [
