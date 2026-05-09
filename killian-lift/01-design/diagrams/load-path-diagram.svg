@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .body { fill: #d6dfe8; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .force { stroke: #cc0000; stroke-width: 4; fill: none; marker-end: url(#fmark); }
+    .react { stroke: #006600; stroke-width: 4; fill: none; marker-end: url(#rmark); }
+    .cable { stroke: #222; stroke-width: 3; fill: none; }
+    .moment { stroke: #4a0080; stroke-width: 2; fill: none; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 14px; }
+    .force-t { fill: #cc0000; font-size: 14px; font-weight: bold; }
+    .react-t { fill: #006600; font-size: 14px; font-weight: bold; }
+    .moment-t { fill: #4a0080; font-size: 14px; font-weight: bold; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .center { fill: none; stroke: #111; stroke-width: 0.6; stroke-dasharray: 12 4 2 4; }
+    .ghost { fill: none; stroke: #888; stroke-width: 1; stroke-dasharray: 6 4; }
+  </style>
+  <defs>
+    <marker id="fmark" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <polygon points="0,0 12,6 0,12" fill="#cc0000"/>
+    </marker>
+    <marker id="rmark" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <polygon points="0,0 12,6 0,12" fill="#006600"/>
+    </marker>
+    <pattern id="ghatch2" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#999" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN LIFT - LOAD PATH DIAGRAM</text>
+  <text x="40" y="78" class="lbl">Force flow: load -> fork -> mast -> winch cable -> base -> outriggers -> ground. Reactions in green.</text>
+
+  <!-- Side elevation lift -->
+  <g transform="translate(540,140)">
+    <!-- ground -->
+    <line x1="-200" y1="800" x2="700" y2="800" stroke="#111" stroke-width="1.5"/>
+    <rect x="-200" y="800" width="900" height="20" fill="url(#ghatch2)"/>
+
+    <!-- base -->
+    <rect x="50" y="730" width="500" height="70" class="body"/>
+    <!-- outriggers -->
+    <rect x="-150" y="755" width="200" height="30" class="body"/>
+    <rect x="550" y="755" width="200" height="30" class="body"/>
+    <ellipse cx="-140" cy="800" rx="30" ry="10" fill="#f0a000"/>
+    <ellipse cx="740" cy="800" rx="30" ry="10" fill="#f0a000"/>
+
+    <!-- mast (tall) -->
+    <rect x="270" y="80" width="60" height="650" class="body"/>
+    <line x1="300" y1="80" x2="300" y2="730" class="center"/>
+
+    <!-- top sheave -->
+    <rect x="260" y="60" width="80" height="22" class="accent"/>
+    <circle cx="300" cy="71" r="8" fill="#222"/>
+
+    <!-- carriage with load -->
+    <rect x="170" y="120" width="200" height="20" class="accent"/>
+    <rect x="120" y="100" width="80" height="40" class="accent"/>
+    <rect x="80" y="40" width="220" height="60" fill="#666" stroke="#111"/>
+    <text x="110" y="78" class="lbl" font-size="20" fill="#fff">LOAD 1,500 lb</text>
+
+    <!-- Load arrow -->
+    <line x1="150" y1="100" x2="150" y2="180" class="force"/>
+    <text x="80" y="160" class="force-t">F = 1,500 lb (6.67 kN)</text>
+
+    <!-- Cable tension -->
+    <path d="M 300 71 Q 280 200 165 130" class="cable"/>
+    <line x1="300" y1="71" x2="300" y2="725" class="cable"/>
+
+    <!-- Cable tension arrow -->
+    <line x1="320" y1="200" x2="320" y2="260" class="force"/>
+    <text x="332" y="240" class="force-t">T_cable = 1,500 lb</text>
+    <text x="332" y="258" class="lbl" font-size="12">(single-line reeving)</text>
+
+    <!-- Mast compression -->
+    <line x1="240" y1="400" x2="240" y2="500" class="force"/>
+    <text x="100" y="450" class="force-t">N_mast = 3,000 lb</text>
+    <text x="60" y="468" class="lbl" font-size="12">(load + cable reaction)</text>
+
+    <!-- Mast bending if off-axis -->
+    <path class="moment" d="M 360 350 Q 410 380 360 410"/>
+    <text x="380" y="392" class="moment-t">M (off-axis)</text>
+
+    <!-- Drum/winch reaction at base -->
+    <rect x="280" y="700" width="100" height="30" class="accent"/>
+    <text x="310" y="720" class="lbl" font-size="11">WINCH</text>
+    <line x1="380" y1="725" x2="450" y2="725" class="cable"/>
+    <line x1="450" y1="725" x2="450" y2="600" class="cable"/>
+
+    <!-- Base distributed reaction -->
+    <line x1="100" y1="810" x2="100" y2="880" class="react"/>
+    <line x1="200" y1="810" x2="200" y2="880" class="react"/>
+    <line x1="300" y1="810" x2="300" y2="880" class="react"/>
+    <line x1="400" y1="810" x2="400" y2="880" class="react"/>
+    <line x1="500" y1="810" x2="500" y2="880" class="react"/>
+
+    <!-- outrigger reactions -->
+    <line x1="-140" y1="810" x2="-140" y2="880" class="react"/>
+    <line x1="740" y1="810" x2="740" y2="880" class="react"/>
+
+    <text x="-180" y="900" class="react-t">R_LF</text>
+    <text x="80" y="900" class="react-t">R_base (distributed)</text>
+    <text x="700" y="900" class="react-t">R_RR</text>
+
+    <!-- callouts -->
+    <text x="500" y="60" class="lbl" font-weight="bold">PRIMARY LOAD PATH</text>
+    <text x="500" y="80" class="lbl" font-size="12">1. Load mass at fork tine</text>
+    <text x="500" y="98" class="lbl" font-size="12">2. Tension into cable through carriage</text>
+    <text x="500" y="116" class="lbl" font-size="12">3. Up cable to crown sheave</text>
+    <text x="500" y="134" class="lbl" font-size="12">4. Down to winch drum</text>
+    <text x="500" y="152" class="lbl" font-size="12">5. Through brake into gearbox</text>
+    <text x="500" y="170" class="lbl" font-size="12">6. Mast carries axial compression</text>
+    <text x="500" y="188" class="lbl" font-size="12">7. Base distributes to ground via outriggers</text>
+
+    <!-- height dim -->
+    <line x1="-180" y1="60" x2="-180" y2="800" class="dim"/>
+    <polygon points="-180,60 -186,75 -174,75" fill="#8B0000"/>
+    <polygon points="-180,800 -186,785 -174,785" fill="#8B0000"/>
+    <text x="-260" y="430" class="dimt">25 ft / 7,620 mm</text>
+    <text x="-260" y="448" class="dimt">moment arm</text>
+  </g>
+
+  <!-- KEY CALCS -->
+  <g transform="translate(60,940)">
+    <rect x="0" y="0" width="1820" height="120" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">KEY CALCULATED LOADS (rated capacity 1,500 lb at 25 ft)</text>
+    <text x="10" y="48" class="lbl">Cable tension (single-line)        T = W = 1,500 lb -> 4:1 SF requires breaking strength &gt;= 6,000 lb (1/4 in 7x19 GAC = 7,000 lb min)</text>
+    <text x="10" y="68" class="lbl">Mast axial compression (eccentric)  N = 2W + self-wt = approx 3,200 lb -> 4x4x0.188 HSS A500 Pcr &gt; 18,000 lb (Euler, fixed-fixed Le=8 ft)</text>
+    <text x="10" y="88" class="lbl">Outrigger foot reaction (worst)    R = (W * 17 in offset + base_wt * arm) / 4 -> max 1,150 lb each, foot rated 1,200 lb static</text>
+    <text x="10" y="108" class="lbl">Tipping moment about front edge    M_tip = 1,500 lb * 17 in lead = 25,500 in-lb; resisting M = base_wt * 8 in + outrigger * 26 in &gt; 65,000 in-lb (SF = 2.5)</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="100" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="25" x2="430" y2="25" stroke="#111"/>
+    <line x1="0" y1="50" x2="430" y2="50" stroke="#111"/>
+    <line x1="0" y1="75" x2="430" y2="75" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="100" stroke="#111"/>
+    <text x="10" y="18" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="42" class="lbl">KL-100-008</text>
+    <text x="10" y="68" class="lbl">REV A</text>
+    <text x="10" y="92" class="lbl">2026-05-09</text>
+    <text x="225" y="18" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="42" class="lbl">Load Path</text>
+    <text x="225" y="68" class="lbl">Diagram</text>
+    <text x="225" y="92" class="lbl">FBD, side</text>
+  </g>
+</svg>

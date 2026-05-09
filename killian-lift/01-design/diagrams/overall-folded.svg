@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .body { fill: #c8d2dc; stroke: #111; stroke-width: 2; }
+    .body2 { fill: #aab8c5; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 15px; }
+    .leader { stroke: #111; stroke-width: 0.8; fill: none; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .ghost { fill: none; stroke: #888; stroke-width: 1; stroke-dasharray: 6 4; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN LIFT - STOWED / TRANSPORT VIEW</text>
+  <text x="40" y="78" class="lbl">Mast collapsed, outriggers folded, transport wheels engaged. Clears a 36 in doorway.</text>
+
+  <!-- Two views: side and front -->
+  <text x="200" y="130" class="lbl" font-weight="bold">SIDE ELEVATION</text>
+  <text x="1200" y="130" class="lbl" font-weight="bold">FRONT ELEVATION (door clearance)</text>
+
+  <!-- SIDE ELEVATION -->
+  <g transform="translate(120,170)">
+    <!-- ground -->
+    <line x1="0" y1="780" x2="700" y2="780" stroke="#111" stroke-width="1.5"/>
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#999" stroke-width="1"/>
+    </pattern>
+    <rect x="0" y="780" width="700" height="20" fill="url(#hatch)"/>
+
+    <!-- transport wheels -->
+    <circle cx="120" cy="755" r="25" class="body"/>
+    <circle cx="120" cy="755" r="8" fill="#222"/>
+    <circle cx="540" cy="755" r="25" class="body"/>
+    <circle cx="540" cy="755" r="8" fill="#222"/>
+
+    <!-- base body folded -->
+    <rect x="100" y="700" width="460" height="60" class="body"/>
+    <!-- folded outriggers (along base) -->
+    <rect x="115" y="690" width="430" height="14" class="body2"/>
+
+    <!-- mast collapsed (4 sections nested into single block) -->
+    <rect x="280" y="180" width="100" height="525" class="body"/>
+    <rect x="280" y="180" width="100" height="525" class="ghost" fill="none"/>
+    <line x1="305" y1="180" x2="305" y2="705" stroke="#111" stroke-width="0.6"/>
+    <line x1="330" y1="180" x2="330" y2="705" stroke="#111" stroke-width="0.6"/>
+    <line x1="355" y1="180" x2="355" y2="705" stroke="#111" stroke-width="0.6"/>
+
+    <!-- top sheave cap -->
+    <rect x="275" y="160" width="110" height="22" class="accent"/>
+    <circle cx="330" cy="171" r="4" fill="#222"/>
+
+    <!-- carriage folded against mast (stowed orientation, tines up) -->
+    <rect x="385" y="200" width="20" height="200" class="accent"/>
+    <rect x="395" y="195" width="20" height="200" class="accent"/>
+
+    <!-- handle -->
+    <path d="M 100 720 Q 60 660 60 540" stroke="#111" stroke-width="3" fill="none"/>
+    <line x1="40" y1="540" x2="80" y2="540" stroke="#111" stroke-width="3"/>
+
+    <!-- battery -->
+    <rect x="430" y="720" width="100" height="30" class="accent"/>
+    <text x="436" y="740" class="lbl" font-size="11">BATTERY</text>
+
+    <!-- dim height stowed -->
+    <line x1="630" y1="160" x2="630" y2="780" class="dim"/>
+    <polygon points="630,160 624,175 636,175" fill="#8B0000"/>
+    <polygon points="630,780 624,765 636,765" fill="#8B0000"/>
+    <text x="640" y="450" class="dimt">76 in / 1,930 mm</text>
+    <text x="640" y="468" class="dimt">STOWED HEIGHT</text>
+
+    <!-- dim length stowed -->
+    <line x1="40" y1="820" x2="560" y2="820" class="dim"/>
+    <polygon points="40,820 55,814 55,826" fill="#8B0000"/>
+    <polygon points="560,820 545,814 545,826" fill="#8B0000"/>
+    <text x="240" y="845" class="dimt">62 in / 1,575 mm STOWED LENGTH</text>
+  </g>
+
+  <!-- FRONT ELEVATION -->
+  <g transform="translate(1100,170)">
+    <line x1="0" y1="780" x2="700" y2="780" stroke="#111" stroke-width="1.5"/>
+    <rect x="0" y="780" width="700" height="20" fill="url(#hatch)"/>
+
+    <!-- doorway dashed -->
+    <rect x="60" y="180" width="540" height="600" class="ghost"/>
+    <text x="64" y="200" class="lbl" font-size="12" fill="#666">36 in DOORWAY (914 mm)</text>
+
+    <!-- lift front view, narrow -->
+    <rect x="280" y="180" width="100" height="525" class="body"/>
+    <line x1="305" y1="180" x2="305" y2="705" stroke="#111" stroke-width="0.6"/>
+    <line x1="355" y1="180" x2="355" y2="705" stroke="#111" stroke-width="0.6"/>
+    <rect x="275" y="160" width="110" height="22" class="accent"/>
+
+    <!-- base front -->
+    <rect x="245" y="700" width="170" height="60" class="body"/>
+
+    <!-- wheels (front view) -->
+    <circle cx="260" cy="755" r="20" fill="#222"/>
+    <circle cx="400" cy="755" r="20" fill="#222"/>
+
+    <!-- dim width -->
+    <line x1="245" y1="820" x2="415" y2="820" class="dim"/>
+    <polygon points="245,820 260,814 260,826" fill="#8B0000"/>
+    <polygon points="415,820 400,814 400,826" fill="#8B0000"/>
+    <text x="278" y="845" class="dimt">31.5 in / 800 mm STOWED WIDTH</text>
+
+    <!-- doorway dim -->
+    <line x1="60" y1="870" x2="600" y2="870" class="dim"/>
+    <polygon points="60,870 75,864 75,876" fill="#8B0000"/>
+    <polygon points="600,870 585,864 585,876" fill="#8B0000"/>
+    <text x="290" y="895" class="dimt">36 in DOORWAY</text>
+
+    <!-- clearance -->
+    <line x1="60" y1="900" x2="245" y2="900" class="dim"/>
+    <line x1="415" y1="900" x2="600" y2="900" class="dim"/>
+    <text x="98" y="922" class="dimt">2.25 in</text>
+    <text x="450" y="922" class="dimt">2.25 in</text>
+  </g>
+
+  <!-- callouts -->
+  <g class="leader">
+    <line x1="660" y1="755" x2="900" y2="700"/>
+    <line x1="380" y1="180" x2="430" y2="60"/>
+    <line x1="180" y1="700" x2="40" y2="690"/>
+  </g>
+  <g class="lbl">
+    <text x="900" y="697">8 in solid rubber transport wheels</text>
+    <text x="430" y="55">Mast collapses 4:1, head height stowed at 76 in</text>
+    <text x="40" y="685">Outriggers fold flush, no protrusion past base</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KL-100-002</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Killian Lift</text>
+    <text x="225" y="92" class="lbl">Folded / Transport</text>
+    <text x="225" y="128" class="lbl">2 views, NTS</text>
+  </g>
+</svg>

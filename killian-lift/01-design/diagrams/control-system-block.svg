@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .blk { fill: #fff; stroke: #111; stroke-width: 2; }
+    .pwr { fill: #ffd9d9; stroke: #aa0000; stroke-width: 2; }
+    .ctrl { fill: #d9e8ff; stroke: #003a8c; stroke-width: 2; }
+    .sense { fill: #d9ffd9; stroke: #006600; stroke-width: 2; }
+    .net { fill: #fff5d4; stroke: #b07000; stroke-width: 2; }
+    .actr { fill: #f0e0ff; stroke: #4a0080; stroke-width: 2; }
+    .wire-pwr { stroke: #aa0000; stroke-width: 2.5; fill: none; }
+    .wire-can { stroke: #b07000; stroke-width: 2; fill: none; }
+    .wire-sig { stroke: #006600; stroke-width: 1.6; fill: none; }
+    .wire-rf { stroke: #4a0080; stroke-width: 1.6; stroke-dasharray: 6 4; fill: none; }
+    .lbl { fill: #111; font-size: 14px; }
+    .lblb { fill: #111; font-size: 14px; font-weight: bold; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .leg { fill: #111; font-size: 13px; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN LIFT - CONTROL SYSTEM BLOCK DIAGRAM</text>
+  <text x="40" y="78" class="lbl">Power, control, sensing, and telemetry domains. Color-coded by signal class.</text>
+
+  <!-- Power domain -->
+  <text x="80" y="130" class="lblb">POWER DOMAIN (60V/18V DC)</text>
+  <rect x="80" y="150" width="180" height="100" class="pwr" rx="6"/>
+  <text x="92" y="180" class="lbl">BATTERY SLED</text>
+  <text x="92" y="200" class="lbl" font-size="12">FlexVolt 60V / M18 18V</text>
+  <text x="92" y="220" class="lbl" font-size="12">2 sleds, hot-swap</text>
+
+  <rect x="320" y="150" width="180" height="100" class="pwr" rx="6"/>
+  <text x="332" y="180" class="lbl">BUCK CONVERTER</text>
+  <text x="332" y="200" class="lbl" font-size="12">60V -> 12V (sensors)</text>
+  <text x="332" y="220" class="lbl" font-size="12">12V -> 3.3V (MCU)</text>
+
+  <rect x="560" y="150" width="220" height="100" class="actr" rx="6"/>
+  <text x="572" y="180" class="lblb">3-PHASE FET BRIDGE</text>
+  <text x="572" y="200" class="lbl" font-size="12">6x IRFB7437 + gate driver</text>
+  <text x="572" y="220" class="lbl" font-size="12">FOC, 100A peak</text>
+
+  <rect x="840" y="150" width="200" height="100" class="actr" rx="6"/>
+  <text x="852" y="180" class="lblb">BLDC MOTOR</text>
+  <text x="852" y="200" class="lbl" font-size="12">1.2 kW, 3 hall sensors</text>
+  <text x="852" y="220" class="lbl" font-size="12">Spring brake (12V coil)</text>
+
+  <!-- Wires power -->
+  <line x1="260" y1="200" x2="320" y2="200" class="wire-pwr"/>
+  <polygon points="320,200 310,196 310,204" fill="#aa0000"/>
+  <line x1="500" y1="200" x2="560" y2="200" class="wire-pwr"/>
+  <polygon points="560,200 550,196 550,204" fill="#aa0000"/>
+  <line x1="780" y1="200" x2="840" y2="200" class="wire-pwr"/>
+  <polygon points="840,200 830,196 830,204" fill="#aa0000"/>
+
+  <!-- Control MCU -->
+  <text x="80" y="320" class="lblb">CONTROL DOMAIN (CAN bus)</text>
+  <rect x="560" y="340" width="220" height="120" class="ctrl" rx="6"/>
+  <text x="572" y="370" class="lblb">DRIVER MCU</text>
+  <text x="572" y="390" class="lbl" font-size="12">STM32G474, 170 MHz</text>
+  <text x="572" y="408" class="lbl" font-size="12">FOC algo, 20 kHz PWM</text>
+  <text x="572" y="426" class="lbl" font-size="12">Hall feedback</text>
+  <text x="572" y="444" class="lbl" font-size="12">Current sense (3 phases)</text>
+
+  <rect x="840" y="340" width="240" height="120" class="ctrl" rx="6"/>
+  <text x="852" y="370" class="lblb">SUPERVISORY MCU</text>
+  <text x="852" y="390" class="lbl" font-size="12">ESP32-S3 + LoRa SX1276</text>
+  <text x="852" y="408" class="lbl" font-size="12">WiFi + BLE + LTE-M (opt)</text>
+  <text x="852" y="426" class="lbl" font-size="12">Cloud upload, OTA</text>
+  <text x="852" y="444" class="lbl" font-size="12">GPS u-blox MAX-M10</text>
+
+  <!-- CAN line between -->
+  <line x1="780" y1="400" x2="840" y2="400" class="wire-can"/>
+  <text x="800" y="394" class="lbl" font-size="11" fill="#b07000">CAN 500k</text>
+
+  <!-- FET bridge to driver MCU -->
+  <line x1="670" y1="250" x2="670" y2="340" class="wire-sig"/>
+  <text x="678" y="298" class="lbl" font-size="11" fill="#006600">PWM x6, hall</text>
+
+  <!-- SENSORS -->
+  <text x="80" y="540" class="lblb">SENSE DOMAIN</text>
+
+  <rect x="80" y="560" width="180" height="80" class="sense" rx="6"/>
+  <text x="92" y="590" class="lbl">LOAD CELL</text>
+  <text x="92" y="610" class="lbl" font-size="11">3,000 lb pin, 4-arm</text>
+  <text x="92" y="626" class="lbl" font-size="11">strain gauge bridge</text>
+
+  <rect x="280" y="560" width="180" height="80" class="sense" rx="6"/>
+  <text x="292" y="590" class="lbl">LOAD CELL AMP</text>
+  <text x="292" y="610" class="lbl" font-size="11">HX711 24-bit ADC</text>
+  <text x="292" y="626" class="lbl" font-size="11">10 Hz sample</text>
+
+  <rect x="80" y="660" width="180" height="80" class="sense" rx="6"/>
+  <text x="92" y="690" class="lbl">TILT SENSOR</text>
+  <text x="92" y="710" class="lbl" font-size="11">Rieker M8 dual-axis</text>
+  <text x="92" y="726" class="lbl" font-size="11">+/-30 deg, 0.1 deg res</text>
+
+  <rect x="280" y="660" width="180" height="80" class="sense" rx="6"/>
+  <text x="292" y="690" class="lbl">MAST ENCODER</text>
+  <text x="292" y="710" class="lbl" font-size="11">AS5048A magnetic</text>
+  <text x="292" y="726" class="lbl" font-size="11">SPI, 14-bit, on drum</text>
+
+  <rect x="80" y="760" width="180" height="80" class="sense" rx="6"/>
+  <text x="92" y="790" class="lbl">LIMIT SWITCHES</text>
+  <text x="92" y="810" class="lbl" font-size="11">4x outrigger deployed</text>
+  <text x="92" y="826" class="lbl" font-size="11">2x mast end-of-travel</text>
+
+  <rect x="280" y="760" width="180" height="80" class="sense" rx="6"/>
+  <text x="292" y="790" class="lbl">CABLE SPOOL SWITCH</text>
+  <text x="292" y="810" class="lbl" font-size="11">2-dead-wrap detect</text>
+  <text x="292" y="826" class="lbl" font-size="11">prevents over-pay-out</text>
+
+  <!-- sensor lines to MCU -->
+  <line x1="460" y1="600" x2="560" y2="400" class="wire-sig"/>
+  <line x1="460" y1="700" x2="560" y2="430" class="wire-sig"/>
+  <line x1="460" y1="800" x2="560" y2="460" class="wire-sig"/>
+
+  <!-- HMI / Pendant -->
+  <text x="1150" y="540" class="lblb">HMI DOMAIN</text>
+  <rect x="1150" y="560" width="200" height="180" class="ctrl" rx="6"/>
+  <text x="1162" y="590" class="lblb">PENDANT</text>
+  <text x="1162" y="612" class="lbl" font-size="12">UP / DOWN buttons</text>
+  <text x="1162" y="630" class="lbl" font-size="12">Variable speed dial</text>
+  <text x="1162" y="648" class="lbl" font-size="12">E-STOP (red mushroom)</text>
+  <text x="1162" y="666" class="lbl" font-size="12">2-line OLED display</text>
+  <text x="1162" y="684" class="lbl" font-size="12">Buzzer + LED ring</text>
+  <text x="1162" y="702" class="lbl" font-size="12">CAN 250k, 12V</text>
+  <text x="1162" y="720" class="lbl" font-size="12">12 ft coiled cable</text>
+
+  <line x1="1150" y1="650" x2="1080" y2="450" class="wire-can"/>
+  <text x="1095" y="538" class="lbl" font-size="11" fill="#b07000">CAN</text>
+
+  <!-- E-stop on base -->
+  <circle cx="1280" cy="800" r="36" fill="#cc0000" stroke="#111" stroke-width="2"/>
+  <text x="1262" y="804" class="lbl" font-size="12" fill="#fff" font-weight="bold">E-STOP</text>
+  <line x1="1280" y1="764" x2="1280" y2="740" class="wire-sig"/>
+  <line x1="1280" y1="740" x2="1080" y2="460" class="wire-sig"/>
+
+  <!-- Telemetry / cloud -->
+  <text x="1450" y="130" class="lblb">TELEMETRY DOMAIN</text>
+  <rect x="1450" y="150" width="200" height="80" class="net" rx="6"/>
+  <text x="1462" y="180" class="lbl">WIFI 2.4 GHz</text>
+  <text x="1462" y="200" class="lbl" font-size="11">site WiFi or hotspot</text>
+
+  <rect x="1670" y="150" width="200" height="80" class="net" rx="6"/>
+  <text x="1682" y="180" class="lbl">LTE-M MODEM</text>
+  <text x="1682" y="200" class="lbl" font-size="11">opt. Quectel BG95</text>
+
+  <rect x="1450" y="250" width="200" height="80" class="net" rx="6"/>
+  <text x="1462" y="280" class="lbl">GPS</text>
+  <text x="1462" y="300" class="lbl" font-size="11">u-blox MAX-M10S</text>
+
+  <rect x="1670" y="250" width="200" height="80" class="net" rx="6"/>
+  <text x="1682" y="280" class="lbl">CLOUD</text>
+  <text x="1682" y="300" class="lbl" font-size="11">Cloudflare Workers + KV</text>
+
+  <line x1="1080" y1="380" x2="1450" y2="190" class="wire-rf"/>
+  <line x1="1080" y1="390" x2="1450" y2="290" class="wire-rf"/>
+  <line x1="1650" y1="190" x2="1670" y2="190" class="wire-rf"/>
+  <line x1="1650" y1="290" x2="1670" y2="290" class="wire-rf"/>
+
+  <!-- LEGEND -->
+  <g transform="translate(1450,420)">
+    <rect x="0" y="0" width="430" height="200" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lblb">LEGEND</text>
+    <line x1="10" y1="40" x2="40" y2="40" class="wire-pwr"/>
+    <text x="50" y="44" class="leg">Power, 12 AWG +60 V battery DC</text>
+    <line x1="10" y1="62" x2="40" y2="62" class="wire-can"/>
+    <text x="50" y="66" class="leg">CAN bus, 24 AWG twisted pair</text>
+    <line x1="10" y1="84" x2="40" y2="84" class="wire-sig"/>
+    <text x="50" y="88" class="leg">Discrete signal / analog sense</text>
+    <line x1="10" y1="106" x2="40" y2="106" class="wire-rf"/>
+    <text x="50" y="110" class="leg">RF wireless link</text>
+    <rect x="10" y="124" width="20" height="14" class="pwr"/>
+    <text x="40" y="136" class="leg">Power conversion</text>
+    <rect x="160" y="124" width="20" height="14" class="ctrl"/>
+    <text x="190" y="136" class="leg">Control / MCU</text>
+    <rect x="10" y="146" width="20" height="14" class="sense"/>
+    <text x="40" y="158" class="leg">Sensor</text>
+    <rect x="160" y="146" width="20" height="14" class="actr"/>
+    <text x="190" y="158" class="leg">Actuator</text>
+    <rect x="10" y="168" width="20" height="14" class="net"/>
+    <text x="40" y="180" class="leg">Network / RF</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KL-100-007</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Control Block</text>
+    <text x="225" y="92" class="lbl">Diagram</text>
+    <text x="225" y="128" class="lbl">5 domains</text>
+  </g>
+</svg>

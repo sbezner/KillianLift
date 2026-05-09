@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .blk { fill: #fff; stroke: #111; stroke-width: 2; }
+    .pwr { fill: #ffd9d9; stroke: #aa0000; stroke-width: 2; }
+    .ctrl { fill: #d9e8ff; stroke: #003a8c; stroke-width: 2; }
+    .sense { fill: #d9ffd9; stroke: #006600; stroke-width: 2; }
+    .actr { fill: #f0e0ff; stroke: #4a0080; stroke-width: 2; }
+    .wire-pwr { stroke: #aa0000; stroke-width: 3; fill: none; }
+    .wire-pwr-r { stroke: #aa0000; stroke-width: 2; fill: none; stroke-dasharray: 6 3; }
+    .wire-can { stroke: #b07000; stroke-width: 2; fill: none; }
+    .wire-sig { stroke: #006600; stroke-width: 1.6; fill: none; }
+    .lbl { fill: #111; font-size: 14px; }
+    .lblb { fill: #111; font-size: 14px; font-weight: bold; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .pin { fill: #fff; stroke: #111; stroke-width: 1; }
+    .leg { fill: #111; font-size: 13px; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN SMART KIT - WIRING SCHEMATIC</text>
+  <text x="40" y="78" class="lbl">8 connections, all keyed and color-coded. No twisted-pair labeling required of installer.</text>
+
+  <!-- BATTERY -->
+  <rect x="80" y="160" width="180" height="100" class="pwr" rx="6"/>
+  <text x="92" y="190" class="lblb">BATTERY SLED</text>
+  <text x="92" y="210" class="lbl" font-size="12">FlexVolt 60V / M18 18V</text>
+  <text x="92" y="228" class="lbl" font-size="12">3-pin: B+, B-, NTC</text>
+  <text x="92" y="246" class="lbl" font-size="12">XT60-H connector</text>
+
+  <!-- CONTROL BOX -->
+  <rect x="500" y="120" width="500" height="320" class="ctrl" rx="8"/>
+  <text x="520" y="148" class="lblb" font-size="16" fill="#003a8c">CONTROL BOX (KSK-CB-1)</text>
+
+  <!-- inside: ESP32 -->
+  <rect x="540" y="170" width="140" height="60" class="blk" rx="4"/>
+  <text x="552" y="194" class="lbl">ESP32-S3</text>
+  <text x="552" y="212" class="lbl" font-size="11">WiFi/BLE/LTE-M opt</text>
+
+  <!-- 3-phase bridge -->
+  <rect x="540" y="250" width="140" height="60" class="actr" rx="4"/>
+  <text x="552" y="274" class="lbl">FET BRIDGE</text>
+  <text x="552" y="292" class="lbl" font-size="11">6x IRFB7437</text>
+
+  <!-- buck -->
+  <rect x="540" y="330" width="140" height="60" class="pwr" rx="4"/>
+  <text x="552" y="354" class="lbl">BUCK 60-&gt;12V</text>
+  <text x="552" y="372" class="lbl" font-size="11">+ 12V-&gt;3.3V LDO</text>
+
+  <!-- HX711 -->
+  <rect x="710" y="170" width="140" height="60" class="sense" rx="4"/>
+  <text x="722" y="194" class="lbl">HX711 ADC</text>
+  <text x="722" y="212" class="lbl" font-size="11">strain bridge in</text>
+
+  <!-- tilt -->
+  <rect x="710" y="250" width="140" height="60" class="sense" rx="4"/>
+  <text x="722" y="274" class="lbl">RIEKER TILT</text>
+  <text x="722" y="292" class="lbl" font-size="11">+/-30 deg I2C</text>
+
+  <!-- relay/contactor -->
+  <rect x="710" y="330" width="140" height="60" class="pwr" rx="4"/>
+  <text x="722" y="354" class="lbl">SAFETY RELAY</text>
+  <text x="722" y="372" class="lbl" font-size="11">e-stop loop in</text>
+
+  <!-- panel mount connectors on right -->
+  <text x="870" y="170" class="lblb" font-size="12">CONNECTORS</text>
+  <circle cx="900" cy="200" r="14" class="pin"/>
+  <text x="918" y="204" class="lbl" font-size="12">J1 BATTERY</text>
+  <circle cx="900" cy="240" r="14" class="pin"/>
+  <text x="918" y="244" class="lbl" font-size="12">J2 MOTOR</text>
+  <circle cx="900" cy="280" r="14" class="pin"/>
+  <text x="918" y="284" class="lbl" font-size="12">J3 PENDANT</text>
+  <circle cx="900" cy="320" r="14" class="pin"/>
+  <text x="918" y="324" class="lbl" font-size="12">J4 LOAD CELL</text>
+  <circle cx="900" cy="360" r="14" class="pin"/>
+  <text x="918" y="364" class="lbl" font-size="12">J5 LIMIT SWITCH</text>
+  <circle cx="900" cy="400" r="14" class="pin"/>
+  <text x="918" y="404" class="lbl" font-size="12">J6 OPT GPS/LTE</text>
+
+  <!-- BATTERY -> CB J1 -->
+  <line x1="260" y1="210" x2="900" y2="200" class="wire-pwr"/>
+  <text x="320" y="200" class="lbl" font-size="11" fill="#aa0000">12 AWG, 2 cond + NTC</text>
+
+  <!-- CB J2 -> MOTOR -->
+  <rect x="1140" y="180" width="240" height="100" class="actr" rx="6"/>
+  <text x="1152" y="208" class="lblb" fill="#4a0080">BLDC MOTOR + BRAKE</text>
+  <text x="1152" y="226" class="lbl" font-size="12">3 phase + 5 hall</text>
+  <text x="1152" y="244" class="lbl" font-size="12">+ brake coil 12V</text>
+  <text x="1152" y="262" class="lbl" font-size="12">8-pin keyed conn</text>
+  <line x1="914" y1="240" x2="1140" y2="230" class="wire-pwr"/>
+  <text x="980" y="222" class="lbl" font-size="11" fill="#aa0000">8 cond bundle, 1.5 m</text>
+
+  <!-- CB J3 -> PENDANT -->
+  <rect x="1140" y="320" width="240" height="160" class="ctrl" rx="6"/>
+  <text x="1152" y="346" class="lblb" fill="#003a8c">PENDANT</text>
+  <text x="1152" y="366" class="lbl" font-size="12">UP / DOWN</text>
+  <text x="1152" y="384" class="lbl" font-size="12">Variable speed pot</text>
+  <text x="1152" y="402" class="lbl" font-size="12">E-STOP (mushroom)</text>
+  <text x="1152" y="420" class="lbl" font-size="12">OLED 128x32</text>
+  <text x="1152" y="438" class="lbl" font-size="12">Buzzer + LED ring</text>
+  <text x="1152" y="456" class="lbl" font-size="12">CAN, 5-pin M12, 12 ft coil</text>
+  <line x1="914" y1="280" x2="1140" y2="380" class="wire-can"/>
+  <text x="980" y="370" class="lbl" font-size="11" fill="#b07000">M12-A keyed</text>
+
+  <!-- CB J4 -> LOAD CELL -->
+  <rect x="1140" y="500" width="240" height="80" class="sense" rx="6"/>
+  <text x="1152" y="528" class="lblb" fill="#006600">LOAD CELL PIN</text>
+  <text x="1152" y="546" class="lbl" font-size="12">3,000 lb shear pin</text>
+  <text x="1152" y="564" class="lbl" font-size="12">replaces OEM cable anchor</text>
+  <line x1="914" y1="320" x2="1140" y2="540" class="wire-sig"/>
+
+  <!-- CB J5 -> LIMIT -->
+  <rect x="1140" y="620" width="240" height="80" class="sense" rx="6"/>
+  <text x="1152" y="648" class="lblb" fill="#006600">CABLE OVER-PAY-OUT SW</text>
+  <text x="1152" y="666" class="lbl" font-size="12">N.C. micro-switch on drum</text>
+  <text x="1152" y="684" class="lbl" font-size="12">2-dead-wrap detect</text>
+  <line x1="914" y1="360" x2="1140" y2="660" class="wire-sig"/>
+
+  <!-- HEX BACKUP (mechanical) -->
+  <rect x="1140" y="730" width="240" height="80" class="blk" rx="6"/>
+  <text x="1152" y="758" class="lblb">7/16 HEX BACKUP</text>
+  <text x="1152" y="776" class="lbl" font-size="12">Mechanical only</text>
+  <text x="1152" y="794" class="lbl" font-size="12">Cordless drill or T-handle</text>
+
+  <!-- LEGEND / NOTES -->
+  <g transform="translate(80,540)">
+    <rect x="0" y="0" width="380" height="280" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lblb">CONNECTIONS</text>
+    <text x="10" y="48" class="lbl">J1 BATTERY: factory-installed inside sled</text>
+    <text x="10" y="66" class="lbl">J2 MOTOR: pre-terminated 1.5 m harness, 8-pin</text>
+    <text x="10" y="84" class="lbl">J3 PENDANT: 12 ft coiled M12 cable, plug-and-play</text>
+    <text x="10" y="102" class="lbl">J4 LOAD CELL: factory-set, no field cal</text>
+    <text x="10" y="120" class="lbl">J5 LIMIT: pre-installed, factory tested</text>
+    <text x="10" y="138" class="lbl">J6 GPS/LTE: optional add-on PCB, plug-in</text>
+
+    <text x="10" y="172" class="lblb">INSTALLER ACTION</text>
+    <text x="10" y="194" class="lbl">Plug 4 connectors, all keyed and color-coded.</text>
+    <text x="10" y="212" class="lbl">No multimeter, no wire stripper, no labels needed.</text>
+    <text x="10" y="230" class="lbl">All field connectors IP67. Strain relief built in.</text>
+    <text x="10" y="248" class="lbl">Total field wiring time: under 5 minutes.</text>
+    <text x="10" y="266" class="lbl">Pre-flight self-test confirms every link.</text>
+  </g>
+
+  <!-- LEGEND -->
+  <g transform="translate(80,860)">
+    <rect x="0" y="0" width="900" height="140" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lblb">LEGEND</text>
+    <line x1="10" y1="44" x2="60" y2="44" class="wire-pwr"/>
+    <text x="70" y="48" class="leg">High-current DC, 12 AWG, red insulator</text>
+    <line x1="10" y1="68" x2="60" y2="68" class="wire-can"/>
+    <text x="70" y="72" class="leg">CAN bus, M12 keyed connector</text>
+    <line x1="10" y1="92" x2="60" y2="92" class="wire-sig"/>
+    <text x="70" y="96" class="leg">Sensor signal, 24 AWG shielded</text>
+    <rect x="10" y="108" width="20" height="14" class="ctrl"/>
+    <text x="40" y="120" class="leg">Control electronics</text>
+    <rect x="160" y="108" width="20" height="14" class="actr"/>
+    <text x="190" y="120" class="leg">Motor / actuator</text>
+    <rect x="310" y="108" width="20" height="14" class="sense"/>
+    <text x="340" y="120" class="leg">Sensor</text>
+    <rect x="460" y="108" width="20" height="14" class="pwr"/>
+    <text x="490" y="120" class="leg">Power conversion</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KSK-200-002</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Smart Kit Wiring</text>
+    <text x="225" y="92" class="lbl">Schematic</text>
+    <text x="225" y="128" class="lbl">8 connections</text>
+  </g>
+</svg>

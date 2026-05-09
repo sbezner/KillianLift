@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .body { fill: #d6dfe8; stroke: #111; stroke-width: 2; }
+    .body2 { fill: #b5bfc9; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .motor { fill: #444; stroke: #111; stroke-width: 2; }
+    .gear { fill: #888; stroke: #111; stroke-width: 1.5; }
+    .copper { fill: #b87333; stroke: #111; stroke-width: 1; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 14px; }
+    .leader { stroke: #111; stroke-width: 0.8; fill: none; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .center { fill: none; stroke: #111; stroke-width: 0.6; stroke-dasharray: 12 4 2 4; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN LIFT - WINCH ASSEMBLY (SECTIONED)</text>
+  <text x="40" y="78" class="lbl">Brushless DC motor, 50:1 planetary gearbox, drum, automatic load brake, 7/16 in hex backup input.</text>
+
+  <!-- Centerline -->
+  <line x1="120" y1="500" x2="1820" y2="500" class="center"/>
+
+  <g transform="translate(120,260)">
+    <!-- BLDC motor -->
+    <rect x="0" y="160" width="220" height="160" class="motor" rx="6"/>
+    <circle cx="110" cy="240" r="60" fill="#666" stroke="#111"/>
+    <circle cx="110" cy="240" r="30" class="copper"/>
+    <circle cx="110" cy="240" r="10" fill="#222"/>
+    <!-- cooling fins -->
+    <line x1="0" y1="170" x2="220" y2="170" stroke="#111"/>
+    <line x1="0" y1="186" x2="220" y2="186" stroke="#111"/>
+    <line x1="0" y1="294" x2="220" y2="294" stroke="#111"/>
+    <line x1="0" y1="310" x2="220" y2="310" stroke="#111"/>
+    <text x="58" y="345" class="lbl" font-size="11" fill="#fff">BLDC 1.2 kW</text>
+
+    <!-- output shaft from motor -->
+    <rect x="220" y="232" width="40" height="16" fill="#888" stroke="#111"/>
+
+    <!-- gearbox (planetary) -->
+    <rect x="260" y="180" width="250" height="120" class="body" rx="6"/>
+    <circle cx="320" cy="240" r="34" class="gear"/>
+    <circle cx="380" cy="220" r="20" class="gear"/>
+    <circle cx="380" cy="260" r="20" class="gear"/>
+    <circle cx="440" cy="240" r="28" class="gear"/>
+    <text x="285" y="190" class="lbl" font-size="11">PLANETARY 50:1</text>
+
+    <!-- gearbox output shaft -->
+    <rect x="510" y="232" width="60" height="16" fill="#888" stroke="#111"/>
+
+    <!-- automatic load brake (between gearbox and drum) -->
+    <rect x="570" y="200" width="60" height="80" class="accent" rx="4"/>
+    <circle cx="600" cy="240" r="22" fill="#222"/>
+    <circle cx="600" cy="240" r="10" fill="#fff" stroke="#111"/>
+    <text x="572" y="296" class="lbl" font-size="10">LOAD BRAKE</text>
+
+    <!-- drum -->
+    <rect x="630" y="120" width="380" height="240" class="body" rx="8"/>
+    <!-- drum flanges -->
+    <rect x="630" y="120" width="20" height="240" class="body2"/>
+    <rect x="990" y="120" width="20" height="240" class="body2"/>
+    <!-- spiral grooves on drum -->
+    <g stroke="#666" stroke-width="0.8" fill="none">
+      <line x1="650" y1="140" x2="990" y2="140"/>
+      <line x1="650" y1="155" x2="990" y2="155"/>
+      <line x1="650" y1="170" x2="990" y2="170"/>
+      <line x1="650" y1="185" x2="990" y2="185"/>
+      <line x1="650" y1="200" x2="990" y2="200"/>
+      <line x1="650" y1="215" x2="990" y2="215"/>
+      <line x1="650" y1="230" x2="990" y2="230"/>
+      <line x1="650" y1="245" x2="990" y2="245"/>
+      <line x1="650" y1="260" x2="990" y2="260"/>
+      <line x1="650" y1="275" x2="990" y2="275"/>
+      <line x1="650" y1="290" x2="990" y2="290"/>
+      <line x1="650" y1="305" x2="990" y2="305"/>
+      <line x1="650" y1="320" x2="990" y2="320"/>
+      <line x1="650" y1="335" x2="990" y2="335"/>
+    </g>
+
+    <!-- cable on drum -->
+    <rect x="800" y="200" width="50" height="80" fill="#222"/>
+    <path d="M 825 200 Q 850 100 1100 80" stroke="#222" stroke-width="3" fill="none"/>
+    <text x="1100" y="75" class="lbl">to mast crown sheave</text>
+
+    <!-- drum bearing housing right -->
+    <rect x="1010" y="200" width="50" height="80" class="body2"/>
+
+    <!-- 7/16 hex backup input shaft -->
+    <rect x="1060" y="232" width="100" height="16" fill="#888"/>
+    <polygon points="1160,224 1180,232 1180,248 1160,256 1140,248 1140,232" fill="#444" stroke="#111"/>
+    <text x="1135" y="276" class="lbl" font-size="11">7/16 HEX</text>
+
+    <!-- mounting plate -->
+    <rect x="-20" y="400" width="1240" height="20" class="body"/>
+    <line x1="40" y1="400" x2="40" y2="380" stroke="#111"/>
+    <line x1="1180" y1="400" x2="1180" y2="380" stroke="#111"/>
+    <circle cx="40" cy="410" r="6" fill="#222"/>
+    <circle cx="1180" cy="410" r="6" fill="#222"/>
+
+    <!-- callouts -->
+    <line x1="110" y1="160" x2="110" y2="60" class="leader"/>
+    <text x="20" y="48" class="lbl">[1] 1.2 kW BLDC, IP54, sensored</text>
+
+    <line x1="385" y1="180" x2="385" y2="80" class="leader"/>
+    <text x="290" y="68" class="lbl">[2] 50:1 planetary, 130 N·m output</text>
+
+    <line x1="600" y1="200" x2="600" y2="100" class="leader"/>
+    <text x="510" y="88" class="lbl">[3] Spring-applied / power-released</text>
+    <text x="510" y="106" class="lbl">      load-holding brake (ASME B30.7)</text>
+
+    <line x1="820" y1="120" x2="820" y2="40" class="leader"/>
+    <text x="720" y="28" class="lbl">[4] 4.5 in OD x 12 in drum, 60 ft 1/4 in cable</text>
+
+    <line x1="1170" y1="240" x2="1300" y2="240" class="leader"/>
+    <text x="1310" y="245" class="lbl">[5] 7/16 hex backup (drill or hand crank)</text>
+
+    <line x1="50" y1="410" x2="50" y2="500" class="leader"/>
+    <text x="-40" y="514" class="lbl">[6] M10 cap-screws, 4 places, to base frame</text>
+
+    <!-- battery sled -->
+    <rect x="-100" y="80" width="120" height="60" class="accent" rx="4"/>
+    <text x="-94" y="116" class="lbl" font-size="11">BATTERY SLED</text>
+    <text x="-94" y="132" class="lbl" font-size="10">FlexVolt / M18</text>
+    <line x1="20" y1="110" x2="80" y2="180" class="leader"/>
+
+    <!-- DC bus to motor -->
+    <path d="M 20 110 L 80 110 L 80 180" stroke="#aa0000" stroke-width="2" fill="none"/>
+    <text x="22" y="170" class="lbl" font-size="11" fill="#aa0000">DC BUS</text>
+
+    <!-- driver / MCU box -->
+    <rect x="850" y="420" width="180" height="100" class="body" rx="6"/>
+    <text x="858" y="445" class="lbl" font-size="13" font-weight="bold">MOTOR DRIVER + MCU</text>
+    <text x="858" y="465" class="lbl" font-size="11">3-phase FET bridge</text>
+    <text x="858" y="481" class="lbl" font-size="11">Hall input, current sense</text>
+    <text x="858" y="497" class="lbl" font-size="11">CAN bus to ESP32</text>
+    <text x="858" y="513" class="lbl" font-size="11">12V aux out for sensors</text>
+    <line x1="940" y1="420" x2="940" y2="320" stroke="#aa0000" stroke-width="1.5" fill="none"/>
+
+    <!-- DIMS -->
+    <line x1="0" y1="440" x2="1180" y2="440" class="dim"/>
+    <polygon points="0,440 15,434 15,446" fill="#8B0000"/>
+    <polygon points="1180,440 1165,434 1165,446" fill="#8B0000"/>
+    <text x="500" y="462" class="dimt">22.5 in / 572 mm overall length</text>
+  </g>
+
+  <!-- specs box -->
+  <g transform="translate(80,820)">
+    <rect x="0" y="0" width="700" height="200" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">SPECIFICATIONS</text>
+    <text x="10" y="48" class="lbl">Motor: 1.2 kW BLDC, 18 V nom (FlexVolt 60 V), 4,500 RPM no-load</text>
+    <text x="10" y="68" class="lbl">Gearbox: 50:1 single-stage planetary, AGMA 9 quality, &gt; 90% efficiency</text>
+    <text x="10" y="88" class="lbl">Drum: 4.5 in OD x 12 in usable, holding 60 ft of 1/4 in 7x19 GAC cable</text>
+    <text x="10" y="108" class="lbl">Line speed (no-load): 90 ft/min   |   Rated load: 60 ft / 60 s = 25 ft / 25 s</text>
+    <text x="10" y="128" class="lbl">Brake: spring-applied / electrically released, holds 200% rated line pull</text>
+    <text x="10" y="148" class="lbl">Backup input: 7/16 in hex, 1:1 to drum (5 sec/ft cordless drill at 500 RPM)</text>
+    <text x="10" y="168" class="lbl">Mass: 14.5 lb / 6.6 kg     |     Mounting: 4x M10 to base frame</text>
+    <text x="10" y="188" class="lbl">IP rating: IP54   |   Duty: S3 25% (5 min on / 15 min off)</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KL-100-005</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Winch Assembly</text>
+    <text x="225" y="92" class="lbl">Sectioned</text>
+    <text x="225" y="128" class="lbl">1:4</text>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+level,part_number,description,qty,uom,vendor,vendor_part,unit_cost_usd,extended_cost_usd,notes
+1,KL-100-A,Killian Lift v1 Full Product Assembly,1,ea,Killian (final assy),,—,—,Top assembly
+2,KL-110-A,Base Assembly,1,ea,Killian (sub),,—,—,
+3,KL-111,Cast aluminum base body 6061-T6,1,ea,Eck Industries (Manitowoc WI),custom,82.00,82.00,Sand cast pattern + machine
+3,KL-112,Outrigger arm 2.5x2.5x0.250 HSS A500-B 14in,4,ea,Atlas Tube,HSS2.5x2.5x0.250,9.50,38.00,Mitered welded tee
+3,KL-113,Cam-lock body 304 SS investment cast,4,ea,Avalon Castings,custom,11.00,44.00,
+3,KL-114,Cam-lock pin 4140 Q&T 5/16 ground,4,ea,McMaster,91585A246,1.25,5.00,RC 38-42
+3,KL-115,Foot pad 80A PUR + 7075 disk 3in,4,ea,custom mold,custom,3.80,15.20,
+3,KL-116,Acme screw 1/2-13 x 4in 304 SS,4,ea,Roton,1/2-13X4,8.20,32.80,
+3,KL-117,Finger knob 304 SS 2.5in,4,ea,Reid Supply,KHP-275,2.50,10.00,
+3,KL-118,Limit switch Honeywell ZW7 IP67,6,ea,Honeywell,ZW7-N,4.85,29.10,4 outrigger + 2 mast
+3,KL-119,M12 axle 8in transport wheel solid rubber,2,ea,Colson,4-8R-1,11.00,22.00,
+3,KL-120,Caster 4in steel rim swivel locking,4,ea,Colson,4-4408-650-LK,8.50,34.00,
+3,KL-121,Hardware kit base (M10 SHCS 12.9 + washers + Loctite),1,kit,Würth,custom,8.50,8.50,
+2,KL-130-A,Mast Assembly,1,ea,Killian (sub),,—,—,
+3,KL-131,Mast section 1, 4.0x4.0x0.188 HSS A500-B 7ft 6in,1,ea,Atlas Tube + machining,custom,38.00,38.00,
+3,KL-132,Mast section 2, 3.5x3.5x0.180 HSS A500-B 7ft 0in,1,ea,Atlas Tube + machining,custom,32.00,32.00,
+3,KL-133,Mast section 3, 3.0x3.0x0.165 HSS A500-B 6ft 6in,1,ea,Atlas Tube + machining,custom,28.00,28.00,
+3,KL-134,Mast section 4, 2.5x2.5x0.160 HSS A500-B 6ft 0in,1,ea,Atlas Tube + machining,custom,24.00,24.00,
+3,KL-135,Glide pad UHMW-PE corner 1.5x1.5x0.5,32,ea,Plastix,custom,0.45,14.40,8 per joint x 4 joints (revised from 2 levels)
+3,KL-136,Crown sheave housing cast A356-T6 + machined,1,ea,Eck Industries,custom,28.00,28.00,
+3,KL-137,Crown sheave 5.0in PCD U-groove 6061,1,ea,custom,custom,11.00,11.00,
+3,KL-138,Sheave bearing 6204-2RS,2,ea,SKF,6204-2RS1,3.20,6.40,
+3,KL-139,Internal sheave 4in PCD,3,ea,custom,custom,7.50,22.50,
+2,KL-140-A,Carriage and Forks,1,ea,Killian (sub),,—,—,
+3,KL-141,Carriage frame welded A572 Gr 50 24in,1,ea,laser cut + weld,custom,42.00,42.00,
+3,KL-142,Fork tine 24in A572 Gr 50 with gusset,2,ea,laser cut + weld,custom,16.00,32.00,
+3,KL-143,Tine spacing slide adjuster,1,ea,custom,custom,6.50,6.50,
+3,KL-144,Glide block UHMW carriage,4,ea,Plastix,custom,1.20,4.80,
+3,KL-145,Load cell 3000lb shear-pin (replaces cable anchor),1,ea,Interface Force,custom-SPI,68.00,68.00,
+2,KL-150-A,Winch Assembly,1,ea,Killian (sub),,—,—,
+3,KL-151,BLDC motor 1.2kW 8P12S sensored 60V wind,1,ea,Lin Engineering / TBD,custom,82.00,82.00,Final vendor TBD; alt MW90T-W2
+3,KL-152,Planetary gearbox 50:1 AGMA9,1,ea,Apex Dynamics,AB060-S2-P50,118.00,118.00,
+3,KL-153,Drum 4.5in OD x 12in 6061,1,ea,custom,custom,28.00,28.00,
+3,KL-154,Cable 5/16in 7x19 GAC 60ft swaged term.,1,ea,Loos & Co,7x19-5/16-60,32.00,32.00,Upgraded from 1/4 per load calcs
+3,KL-155,Brake spring-applied 600Nm holding,1,ea,Mayr,ROBA-200/600,84.00,84.00,
+3,KL-156,7/16in hex backup adapter shaft,1,ea,custom,custom,4.50,4.50,
+3,KL-157,Drum bearing housing,2,ea,custom,custom,7.50,15.00,
+3,KL-158,Hardware kit winch (M10 + flange + Loctite),1,kit,Würth,custom,3.50,3.50,
+2,KL-160-A,Electrical / Control,1,ea,Killian (sub),,—,—,
+3,KL-161,Control box housing 6063 extrusion + endcaps IP65,1,ea,Hammond Mfg,custom,18.00,18.00,
+3,KL-162,Battery sled FlexVolt cradle injection PA6-GF30,1,ea,custom mold,custom,4.50,4.50,
+3,KL-163,Battery sled M18 cradle injection PA6-GF30,1,ea,custom mold,custom,4.50,4.50,Both ship in box
+3,KL-164,Sled mounting plate aluminum,1,ea,custom,custom,3.20,3.20,
+3,KL-165,Driver MCU PCBA assembled,1,ea,JLCPCB / Bittele,KSK-MCU-1,28.00,28.00,
+3,KL-166,Supervisor PCBA (ESP32-S3 + radios),1,ea,JLCPCB / Bittele,KSK-SUP-1,22.00,22.00,
+3,KL-167,FET bridge PCBA (6x IRFB7437 + DRV8353),1,ea,JLCPCB / Bittele,KSK-FET-1,32.00,32.00,
+3,KL-168,LTE-M radio module Quectel BG95 + nano-SIM,1,ea,Quectel,BG95-M3,16.00,16.00,Optional, populated on Pro/Fleet
+3,KL-169,GPS module u-blox MAX-M10S,1,ea,u-blox,MAX-M10S,8.50,8.50,Optional, populated on Pro/Fleet
+3,KL-170,Buck converter 60-12V LM5160A circuit,1,ea,(on supervisor PCBA),,2.50,2.50,
+3,KL-171,Tilt sensor Rieker M8 dual-axis I2C,1,ea,Rieker,M8I,42.00,42.00,
+3,KL-172,Mast position encoder AS5048A + magnet,1,ea,AMS / Mouser,AS5048A,5.20,5.20,
+3,KL-173,Pendant assembly (housing + buttons + OLED + LED ring + buzzer + cable),1,ea,Killian sub-assembly,custom,38.00,38.00,
+3,KL-174,Wiring harness battery to control 8AWG XT90,1,set,custom,custom,11.00,11.00,Revised per load calcs
+3,KL-175,Wiring harness motor 8-pin M16,1,set,custom,custom,9.50,9.50,
+3,KL-176,Wiring harness sensors,1,set,custom,custom,4.50,4.50,
+3,KL-177,Fuses + holders ANL 80A + ATO 30A,1,set,Bussmann,custom,3.00,3.00,
+3,KL-178,Brake chopper resistor 3.3 ohm 50W,1,ea,Vishay,custom,4.20,4.20,
+2,KL-180-A,Marking and Documentation,1,ea,Killian (sub),,—,—,
+3,KL-181,Capacity placard laser engraved,1,ea,Marking Solutions Inc,custom,2.00,2.00,
+3,KL-182,Hazard pictograms + serial label,1,set,Marking Solutions Inc,custom,1.50,1.50,
+3,KL-183,Operator manual + maintenance manual + DoC + test cert,1,set,Killian print,custom,3.50,3.50,
+3,KL-184,Quick-start card laminated,1,ea,Killian print,custom,0.40,0.40,
+2,KL-190-A,Finish and Pack,1,ea,Killian (sub),,—,—,
+3,KL-191,Powder coat (full machine),1,job,contract finisher,custom,28.00,28.00,
+3,KL-192,Pack carton + foam + pallet + strap,1,set,Uline,custom,18.00,18.00,
+,,,,,,Subtotal materials,,1196.20,Direct material cost
+,,,,,,Direct labor (final assembly + test),,85.00,85.00,1.7 hr at $50/hr loaded
+,,,,,,Factory overhead (allocated),,140.00,140.00,
+,,,,,,FOB factory unit cost,,,1421.20,
+,,,,,,Target wholesale (60% GM),,,2120.00,
+,,,,,,Target retail MSRP,,,3500.00,

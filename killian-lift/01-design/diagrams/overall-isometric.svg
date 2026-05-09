@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .frame { fill: none; stroke: #111; stroke-width: 2; stroke-linejoin: round; }
+    .face { fill: #d6dfe8; stroke: #111; stroke-width: 2; }
+    .face2 { fill: #b9c5d2; stroke: #111; stroke-width: 2; }
+    .face3 { fill: #93a3b3; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .cable { fill: none; stroke: #222; stroke-width: 1.5; stroke-dasharray: none; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 15px; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .leader { fill: none; stroke: #111; stroke-width: 0.8; }
+    .grid { stroke: #eee; stroke-width: 1; fill: none; }
+  </style>
+
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <!-- title block top -->
+  <text x="40" y="50" class="title">KILLIAN LIFT - OVERALL ISOMETRIC VIEW (DEPLOYED)</text>
+  <text x="40" y="78" class="lbl">1,500 lb at 25 ft, full extension, outriggers deployed and footed.</text>
+
+  <!-- ground reference shadow ellipse -->
+  <ellipse cx="900" cy="960" rx="380" ry="55" fill="#eef1f4"/>
+
+  <!-- BASE FRAME (isometric) -->
+  <!-- Base footprint corners (deployed): in iso, simulate roughly 48"x52" -->
+  <!-- Front-left foot -->
+  <g id="base">
+    <!-- main square base body -->
+    <polygon class="face2" points="700,890 920,830 1100,890 880,950" />
+    <polygon class="face3" points="700,890 880,950 880,975 700,915" />
+    <polygon class="face" points="1100,890 880,950 880,975 1100,915" />
+
+    <!-- front outrigger arm (lower-left) -->
+    <polygon class="face" points="700,890 600,945 580,955 680,900" />
+    <!-- foot pad LF -->
+    <ellipse cx="585" cy="965" rx="35" ry="12" fill="#f0a000" stroke="#111"/>
+    <!-- rear outrigger arm (upper-right) -->
+    <polygon class="face" points="1100,890 1210,840 1230,850 1120,900" />
+    <ellipse cx="1220" cy="850" rx="32" ry="11" fill="#f0a000" stroke="#111"/>
+    <!-- left back outrigger -->
+    <polygon class="face" points="920,830 850,770 870,760 940,820" />
+    <ellipse cx="860" cy="765" rx="30" ry="10" fill="#f0a000" stroke="#111"/>
+    <!-- right front outrigger -->
+    <polygon class="face" points="880,950 950,1010 970,1000 900,940" />
+    <ellipse cx="960" cy="1010" rx="30" ry="10" fill="#f0a000" stroke="#111"/>
+  </g>
+
+  <!-- MAST -->
+  <!-- mast rises from center of base; 4 telescoping sections -->
+  <g id="mast">
+    <!-- section 1 (largest, bottom) -->
+    <polygon class="face2" points="855,890 945,855 945,705 855,740" />
+    <polygon class="face3" points="855,890 855,740 870,733 870,883" />
+    <polygon class="face" points="945,855 945,705 870,733 870,883" />
+
+    <!-- section 2 -->
+    <polygon class="face2" points="868,735 935,710 935,540 868,565" />
+    <polygon class="face3" points="868,735 868,565 880,560 880,730" />
+    <polygon class="face" points="935,710 935,540 880,560 880,730" />
+
+    <!-- section 3 -->
+    <polygon class="face2" points="878,562 925,544 925,390 878,408" />
+    <polygon class="face3" points="878,562 878,408 888,403 888,557" />
+    <polygon class="face" points="925,544 925,390 888,403 888,557" />
+
+    <!-- section 4 (smallest, top) -->
+    <polygon class="face2" points="887,405 918,393 918,250 887,262" />
+    <polygon class="face3" points="887,405 887,262 894,259 894,402" />
+    <polygon class="face" points="918,393 918,250 894,259 894,402" />
+
+    <!-- top sheave housing -->
+    <polygon class="accent" points="884,260 922,247 922,225 884,238" />
+    <circle cx="903" cy="240" r="6" fill="#222"/>
+  </g>
+
+  <!-- FORK CARRIAGE -->
+  <g id="carriage">
+    <polygon class="face2" points="850,310 970,265 970,295 850,340" />
+    <polygon class="face" points="970,265 990,260 990,290 970,295" />
+    <polygon class="face3" points="850,310 850,340 870,335 870,305" />
+    <!-- fork tines forward -->
+    <polygon class="accent" points="850,330 760,365 765,372 855,338" />
+    <polygon class="accent" points="850,318 760,353 765,360 855,326" />
+    <!-- back-stop -->
+    <polygon class="face2" points="970,265 985,260 985,235 970,240"/>
+  </g>
+
+  <!-- CABLE -->
+  <g id="cable">
+    <path class="cable" d="M 903 240 L 900 248 L 902 270 L 900 305"/>
+    <path class="cable" d="M 903 240 Q 905 280 902 320"/>
+  </g>
+
+  <!-- WINCH HOUSING ON BASE -->
+  <g id="winch">
+    <rect x="980" y="850" width="120" height="55" rx="6" class="face" transform="skewY(-12)"/>
+    <text x="985" y="900" class="lbl" transform="skewY(-12)">WINCH</text>
+    <!-- battery sled -->
+    <rect x="730" y="900" width="110" height="50" rx="4" class="accent" transform="skewY(-12)"/>
+    <text x="740" y="930" class="lbl" transform="skewY(-12)" font-size="11">FLEXVOLT / M18</text>
+  </g>
+
+  <!-- PENDANT CONTROL -->
+  <g id="pendant" transform="translate(1180,800)">
+    <rect x="0" y="0" width="70" height="110" rx="10" fill="#222"/>
+    <circle cx="35" cy="30" r="13" fill="#f0a000"/>
+    <rect x="20" y="55" width="30" height="10" rx="3" fill="#aaa"/>
+    <rect x="20" y="75" width="30" height="10" rx="3" fill="#aaa"/>
+    <rect x="20" y="95" width="30" height="10" rx="3" fill="#cc0000"/>
+    <path class="cable" d="M 35 0 Q 60 -50 1080 850" stroke="#111" stroke-width="1.2" fill="none"/>
+  </g>
+
+  <!-- WHEELS at base back -->
+  <ellipse cx="1110" cy="950" rx="28" ry="14" fill="#222"/>
+  <ellipse cx="1110" cy="945" rx="28" ry="14" fill="#444"/>
+
+  <!-- DIMENSIONS -->
+  <!-- height from ground to fork: 25 ft -->
+  <line x1="1320" y1="945" x2="1320" y2="320" class="dim"/>
+  <polygon points="1320,945 1314,930 1326,930" fill="#8B0000"/>
+  <polygon points="1320,320 1314,335 1326,335" fill="#8B0000"/>
+  <text x="1335" y="640" class="dimt">25 ft / 7,620 mm</text>
+  <text x="1335" y="660" class="dimt">MAX FORK HEIGHT</text>
+
+  <!-- deployed footprint width -->
+  <line x1="580" y1="1010" x2="970" y2="1010" class="dim"/>
+  <polygon points="580,1010 595,1004 595,1016" fill="#8B0000"/>
+  <polygon points="970,1010 955,1004 955,1016" fill="#8B0000"/>
+  <text x="650" y="1035" class="dimt">48 in / 1,219 mm</text>
+
+  <!-- deployed footprint depth (going back) -->
+  <line x1="1230" y1="855" x2="860" y2="765" class="dim"/>
+  <polygon points="1230,855 1218,847 1216,860" fill="#8B0000"/>
+  <polygon points="860,765 872,773 874,760" fill="#8B0000"/>
+  <text x="1010" y="800" class="dimt">52 in / 1,321 mm</text>
+
+  <!-- CALLOUTS -->
+  <g class="leader" stroke="#111">
+    <line x1="903" y1="232" x2="1100" y2="180"/>
+    <line x1="970" y1="280" x2="1180" y2="220"/>
+    <line x1="1040" y1="870" x2="1280" y2="780"/>
+    <line x1="785" y1="918" x2="540" y2="850"/>
+    <line x1="585" y1="965" x2="380" y2="990"/>
+    <line x1="903" y1="500" x2="1140" y2="450"/>
+    <line x1="903" y1="700" x2="1100" y2="680"/>
+    <line x1="1180" y1="800" x2="1340" y2="780"/>
+    <line x1="1100" y1="945" x2="1260" y2="990"/>
+  </g>
+
+  <g class="lbl">
+    <text x="1110" y="178">[1] CABLE SHEAVE HOUSING</text>
+    <text x="1190" y="218">[2] FORK CARRIAGE, 24 in tines</text>
+    <text x="1290" y="778">[3] BRUSHLESS WINCH ASSEMBLY</text>
+    <text x="380" y="845">[4] BATTERY SLED (FlexVolt or M18)</text>
+    <text x="220" y="993">[5] CAM-LOCK OUTRIGGER w/ FOOT PAD</text>
+    <text x="1150" y="448">[6] TELESCOPING MAST, 4 SECTIONS</text>
+    <text x="1110" y="678">[7] LOAD-PATH SAFETY CABLE GUIDE</text>
+    <text x="1350" y="778">[8] 5-BUTTON PENDANT (UP/DN/E-STOP)</text>
+    <text x="1270" y="993">[9] 8 in TRANSPORT WHEELS</text>
+  </g>
+
+  <!-- north arrow / orientation -->
+  <g transform="translate(140,940)">
+    <circle cx="0" cy="0" r="40" fill="#fff" stroke="#111"/>
+    <polygon points="0,-32 8,8 0,2 -8,8" fill="#111"/>
+    <text x="-6" y="-38" class="lbl" font-size="13">FRONT</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KL-100-001</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Killian Lift</text>
+    <text x="225" y="92" class="lbl">Overall Isometric</text>
+    <text x="225" y="128" class="lbl">NTS, dims as shown</text>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+level,part_number,description,qty,uom,vendor,vendor_part,unit_cost_usd,extended_cost_usd,notes
+1,KSK-R250,Killian Smart Kit R-250,1,kit,Killian (final pack),,—,—,Top kit
+2,KSK-101,Mounting bracket R-250 (powder-coated steel),1,ea,laser cut + bend + finish,custom,11.50,11.50,Model-specific
+2,KSK-102,Step adapter M8 stock to M10 SHCS (4 pcs),1,kit,custom turned,custom,2.40,2.40,
+2,KSK-103,M10 SHCS 25mm 12.9 (8 pcs),1,kit,Würth,custom,1.20,1.20,
+2,KSK-104,M6 SHCS 16mm 12.9 (4 pcs),1,kit,Würth,custom,0.40,0.40,Battery sled mount
+2,KSK-105,Square coupler 5/8in stock to gearbox output,1,ea,custom turned,custom,4.20,4.20,
+2,KSK-110,BLDC motor 1.2kW 8P12S sensored 60V wind,1,ea,Lin Engineering / TBD,custom,82.00,82.00,Same as KL-151
+2,KSK-111,Planetary gearbox 20:1 (lower ratio for retrofit),1,ea,Apex Dynamics,AB060-S2-P20,98.00,98.00,Lower ratio than full lift, host already has 4-speed reduction
+2,KSK-112,Spring brake 200Nm holding,1,ea,Mayr,ROBA-150/200,68.00,68.00,Smaller than full lift
+2,KSK-120,Battery sled FlexVolt OR M18 (chosen at order),1,ea,custom mold,custom,4.50,4.50,Two SKUs share BOM
+2,KSK-121,Sled mounting plate aluminum,1,ea,custom,custom,3.20,3.20,
+2,KSK-130,Control box housing 6063 extrusion + endcaps IP65,1,ea,Hammond,custom,18.00,18.00,
+2,KSK-131,Driver MCU PCBA (STM32G474),1,ea,JLCPCB,KSK-MCU-1,28.00,28.00,Same as KL-165
+2,KSK-132,Supervisor PCBA (ESP32-S3),1,ea,JLCPCB,KSK-SUP-1,22.00,22.00,Same as KL-166
+2,KSK-133,FET bridge PCBA (6x IRFB7437),1,ea,JLCPCB,KSK-FET-1,32.00,32.00,Same as KL-167
+2,KSK-134,Tilt sensor Rieker M8,1,ea,Rieker,M8I,42.00,42.00,
+2,KSK-135,Buck converter on PCBA,1,ea,(included on supervisor),,2.50,2.50,
+2,KSK-140,Load cell 3000lb shear-pin (R-250 specific bushing dia),1,ea,Interface Force,custom-SPI-R250,68.00,68.00,
+2,KSK-141,Cotter pin replacement,1,ea,McMaster,91610A129,0.20,0.20,
+2,KSK-150,Pendant assembly,1,ea,Killian sub,custom,38.00,38.00,Same as KL-173
+2,KSK-160,Wiring harness battery to control 8AWG XT90,1,set,custom,custom,11.00,11.00,
+2,KSK-161,Wiring harness motor 8-pin M16,1,set,custom,custom,9.50,9.50,
+2,KSK-162,Wiring harness sensors,1,set,custom,custom,4.50,4.50,
+2,KSK-163,Fuses + holders ATO 30A,1,set,Bussmann,custom,1.20,1.20,
+2,KSK-170,Telemetry option board (GPS + LTE-M) - PRO SKU only,1,ea,Killian PCBA,custom,18.00,18.00,Pop only on KSK-R250-PRO
+2,KSK-180,Hardware bag (zip ties + spare hardware),1,bag,Würth + custom,custom,1.50,1.50,
+2,KSK-181,Tools (4mm + 5mm hex + 13mm wrench + Phillips),1,set,Wera or generic,custom,4.50,4.50,Included to remove "I'll do it later"
+2,KSK-182,Installation guide laminated 4-page,1,ea,Killian print,custom,0.80,0.80,
+2,KSK-183,Quick-start sticker for pendant,1,ea,custom print,custom,0.30,0.30,
+2,KSK-184,Killian sticker (because),1,ea,Sticker Mule,custom,0.20,0.20,
+2,KSK-190,Carton + foam + manual + sticker,1,set,Uline,custom,4.20,4.20,
+,,,,,,Subtotal materials (base SKU no telemetry),,,580.10,Direct material cost (no telemetry pop)
+,,,,,,Subtotal materials (PRO SKU with telemetry),,,598.10,
+,,,,,,Direct labor (final pack + test),,18.00,18.00,0.4 hr at $45/hr loaded
+,,,,,,Factory overhead (allocated),,42.00,42.00,
+,,,,,,FOB factory unit cost (base),,,640.10,
+,,,,,,FOB factory unit cost (PRO),,,658.10,
+,,,,,,Note: BOM target was $200; current rolls to $640 due to motor + load cell + brake + control electronics,,,,These are the same expensive parts as the full lift; volume pricing should drop unit cost ~40% at 5K units
+,,,,,,Volume target (5,000 unit pricing),,,~$200,Per kit-design.md; this requires negotiated pricing on motor (~$50), gearbox (~$60), load cell (~$28), brake (~$30), tilt (~$18), PCBAs total (~$45)
+,,,,,,Target wholesale (KSK-R250),,,520.00,~25% margin to channel
+,,,,,,Target retail MSRP (KSK-R250),,,699.00,
+,,,,,,Target wholesale (KSK-R250-PRO),,,640.00,
+,,,,,,Target retail MSRP (KSK-R250-PRO),,,849.00,

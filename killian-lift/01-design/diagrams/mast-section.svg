@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .steel { fill: #cdd5dd; stroke: #111; stroke-width: 2; }
+    .steel2 { fill: #b5bfc9; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .nylon { fill: #fff5d4; stroke: #111; stroke-width: 1.5; }
+    .cable { fill: none; stroke: #222; stroke-width: 2.5; }
+    .cable2 { fill: none; stroke: #555; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 14px; }
+    .leader { stroke: #111; stroke-width: 0.8; fill: none; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .center { fill: none; stroke: #111; stroke-width: 0.6; stroke-dasharray: 12 4 2 4; }
+    .hatch { fill: url(#hatch45); stroke: #111; stroke-width: 1; }
+  </style>
+  <defs>
+    <pattern id="hatch45" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#888" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN LIFT - MAST CROSS SECTION + CABLE ROUTING</text>
+  <text x="40" y="78" class="lbl">Section A-A through telescoping mast at carriage interface. 4 nested square sections, internal cable reeving.</text>
+
+  <!-- Three sub-views -->
+  <text x="200" y="130" class="lbl" font-weight="bold">A. CROSS SECTION (LOOKING DOWN)</text>
+  <text x="800" y="130" class="lbl" font-weight="bold">B. ELEVATION (CABLE PATH)</text>
+  <text x="1450" y="130" class="lbl" font-weight="bold">C. SHEAVE DETAIL</text>
+
+  <!-- A: cross section -->
+  <g transform="translate(80,160)">
+    <!-- outer section 4x4 -->
+    <rect x="0" y="0" width="500" height="500" class="steel"/>
+    <rect x="20" y="20" width="460" height="460" fill="#fff" stroke="#111" stroke-width="2"/>
+    <!-- section 2 3.5x3.5 -->
+    <rect x="50" y="50" width="400" height="400" class="steel2"/>
+    <rect x="68" y="68" width="364" height="364" fill="#fff" stroke="#111" stroke-width="2"/>
+    <!-- section 3 3x3 -->
+    <rect x="90" y="90" width="320" height="320" class="steel"/>
+    <rect x="106" y="106" width="288" height="288" fill="#fff" stroke="#111" stroke-width="2"/>
+    <!-- section 4 2.5x2.5 -->
+    <rect x="125" y="125" width="250" height="250" class="steel2"/>
+    <rect x="138" y="138" width="224" height="224" fill="#fff" stroke="#111" stroke-width="2"/>
+
+    <!-- nylon glides at corners -->
+    <rect x="22" y="22" width="14" height="14" class="nylon"/>
+    <rect x="464" y="22" width="14" height="14" class="nylon"/>
+    <rect x="22" y="464" width="14" height="14" class="nylon"/>
+    <rect x="464" y="464" width="14" height="14" class="nylon"/>
+
+    <rect x="70" y="70" width="12" height="12" class="nylon"/>
+    <rect x="418" y="70" width="12" height="12" class="nylon"/>
+    <rect x="70" y="418" width="12" height="12" class="nylon"/>
+    <rect x="418" y="418" width="12" height="12" class="nylon"/>
+
+    <!-- cable holes/reeving -->
+    <circle cx="170" cy="250" r="8" class="cable" stroke-width="2"/>
+    <circle cx="330" cy="250" r="8" class="cable" stroke-width="2"/>
+
+    <!-- center cable run -->
+    <circle cx="250" cy="250" r="12" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="250" cy="250" r="6" fill="#222"/>
+
+    <!-- callouts -->
+    <line x1="500" y1="10" x2="600" y2="-30" class="leader"/>
+    <text x="600" y="-32" class="lbl">[1] OUTER 4x4 x 0.188 HSS</text>
+    <line x1="450" y1="50" x2="600" y2="0" class="leader"/>
+    <text x="600" y="-2" class="lbl">[2] SECTION 2, 3.5x3.5 x 0.180</text>
+    <line x1="410" y1="90" x2="600" y2="30" class="leader"/>
+    <text x="600" y="32" class="lbl">[3] SECTION 3, 3.0x3.0 x 0.165</text>
+    <line x1="375" y1="125" x2="600" y2="60" class="leader"/>
+    <text x="600" y="62" class="lbl">[4] SECTION 4, 2.5x2.5 x 0.160 (top)</text>
+    <line x1="36" y1="36" x2="-30" y2="20" class="leader"/>
+    <text x="-100" y="20" class="lbl">[5] UHMW glide pad (8 places)</text>
+    <line x1="250" y1="262" x2="-30" y2="320" class="leader"/>
+    <text x="-200" y="324" class="lbl">[6] PRIMARY 1/4 in 7x19 GAC</text>
+    <line x1="170" y1="250" x2="-30" y2="380" class="leader"/>
+    <text x="-200" y="384" class="lbl">[7] SECONDARY SAFETY CABLE</text>
+
+    <!-- dim outer -->
+    <line x1="0" y1="540" x2="500" y2="540" class="dim"/>
+    <polygon points="0,540 15,534 15,546" fill="#8B0000"/>
+    <polygon points="500,540 485,534 485,546" fill="#8B0000"/>
+    <text x="200" y="562" class="dimt">4.0 in / 102 mm</text>
+
+    <line x1="540" y1="0" x2="540" y2="500" class="dim"/>
+    <polygon points="540,0 534,15 546,15" fill="#8B0000"/>
+    <polygon points="540,500 534,485 546,485" fill="#8B0000"/>
+    <text x="552" y="255" class="dimt">4.0 in</text>
+  </g>
+
+  <!-- B: elevation -->
+  <g transform="translate(800,160)">
+    <!-- mast schematic, 4 stacked sections -->
+    <rect x="100" y="0" width="160" height="700" class="steel"/>
+    <rect x="115" y="20" width="130" height="660" fill="#fff" stroke="#111"/>
+    <rect x="125" y="80" width="110" height="600" class="steel2"/>
+    <rect x="135" y="100" width="90" height="580" fill="#fff" stroke="#111"/>
+    <rect x="145" y="180" width="70" height="500" class="steel"/>
+    <rect x="153" y="200" width="54" height="480" fill="#fff" stroke="#111"/>
+    <rect x="163" y="280" width="34" height="400" class="steel2"/>
+
+    <!-- top sheave -->
+    <rect x="80" y="-30" width="200" height="40" class="accent"/>
+    <circle cx="180" cy="-10" r="14" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="180" cy="-10" r="6" fill="#222"/>
+
+    <!-- carriage (forks pos) -->
+    <rect x="80" y="290" width="220" height="30" class="accent"/>
+    <text x="305" y="310" class="lbl">FORK CARRIAGE</text>
+
+    <!-- internal sheaves -->
+    <circle cx="180" cy="120" r="10" fill="#fff" stroke="#111"/>
+    <circle cx="180" cy="120" r="4" fill="#222"/>
+    <circle cx="180" cy="220" r="10" fill="#fff" stroke="#111"/>
+    <circle cx="180" cy="220" r="4" fill="#222"/>
+    <circle cx="180" cy="600" r="10" fill="#fff" stroke="#111"/>
+    <circle cx="180" cy="600" r="4" fill="#222"/>
+
+    <!-- drum at base -->
+    <rect x="100" y="700" width="160" height="60" class="accent"/>
+    <circle cx="180" cy="730" r="20" fill="#fff" stroke="#111" stroke-width="2"/>
+
+    <!-- cable path -->
+    <path class="cable" d="M 180 730 L 180 600 L 180 220 L 180 120 L 180 -10 L 165 -10 L 165 -10 Q 145 0 145 305"/>
+
+    <!-- shadow alt -->
+    <path class="cable2" d="M 200 730 Q 220 700 220 600 Q 220 -5 195 -10"/>
+
+    <!-- dim total mast height -->
+    <line x1="370" y1="-30" x2="370" y2="760" class="dim"/>
+    <polygon points="370,-30 364,-15 376,-15" fill="#8B0000"/>
+    <polygon points="370,760 364,745 376,745" fill="#8B0000"/>
+    <text x="380" y="380" class="dimt">28 ft / 8,534 mm</text>
+    <text x="380" y="400" class="dimt">FULL MAST</text>
+
+    <!-- annotations -->
+    <line x1="80" y1="-20" x2="20" y2="-20" class="leader"/>
+    <text x="-180" y="-18" class="lbl">CROWN SHEAVE, 5 in PCD</text>
+    <line x1="100" y1="730" x2="20" y2="730" class="leader"/>
+    <text x="-150" y="732" class="lbl">WINCH DRUM</text>
+  </g>
+
+  <!-- C: sheave detail -->
+  <g transform="translate(1450,160)">
+    <circle cx="200" cy="220" r="160" class="accent"/>
+    <circle cx="200" cy="220" r="115" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="200" cy="220" r="20" fill="#222"/>
+    <!-- groove -->
+    <circle cx="200" cy="220" r="135" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- bearing inner -->
+    <circle cx="200" cy="220" r="10" fill="#fff" stroke="#111"/>
+
+    <!-- cable -->
+    <path d="M 200 60 A 140 140 0 0 1 340 220" class="cable" stroke-width="3"/>
+    <line x1="200" y1="60" x2="200" y2="0" class="cable" stroke-width="3"/>
+    <line x1="340" y1="220" x2="400" y2="220" class="cable" stroke-width="3"/>
+
+    <!-- dims -->
+    <line x1="40" y1="220" x2="360" y2="220" class="dim"/>
+    <text x="160" y="210" class="dimt">5.0 in PCD</text>
+
+    <!-- callouts -->
+    <line x1="200" y1="220" x2="200" y2="450" class="leader"/>
+    <text x="60" y="470" class="lbl">SEALED RADIAL BALL BEARING</text>
+    <text x="60" y="490" class="lbl">6204-2RS, 20 mm bore</text>
+
+    <line x1="60" y1="220" x2="-20" y2="270" class="leader"/>
+    <text x="-180" y="300" class="lbl">U-GROOVE for 1/4 in 7x19 GAC</text>
+    <text x="-180" y="318" class="lbl">D/d = 20 (above 16 min)</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KL-100-004</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Mast Section</text>
+    <text x="225" y="92" class="lbl">Cable Routing</text>
+    <text x="225" y="128" class="lbl">3 views</text>
+  </g>
+</svg>

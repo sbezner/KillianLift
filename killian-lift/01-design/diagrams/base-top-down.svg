@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .body { fill: #d6dfe8; stroke: #111; stroke-width: 2; }
+    .arm { fill: #aab8c5; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .ghost { fill: none; stroke: #888; stroke-width: 1; stroke-dasharray: 6 4; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 14px; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .leader { stroke: #111; stroke-width: 0.8; fill: none; }
+    .center { fill: none; stroke: #111; stroke-width: 0.6; stroke-dasharray: 12 4 2 4; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN LIFT - BASE / OUTRIGGER GEOMETRY (TOP DOWN)</text>
+  <text x="40" y="78" class="lbl">Both states overlaid: outriggers DEPLOYED (solid) and STOWED (dashed). Cam-lock pivot at each arm.</text>
+
+  <!-- LEFT: deployed -->
+  <text x="380" y="135" class="lbl" font-weight="bold">LEFT: DEPLOYED FOOTPRINT 48 in x 52 in</text>
+  <g transform="translate(120,170)">
+    <!-- center cross -->
+    <line x1="350" y1="0" x2="350" y2="780" class="center"/>
+    <line x1="0" y1="390" x2="700" y2="390" class="center"/>
+
+    <!-- main central base body (square) -->
+    <rect x="270" y="310" width="160" height="160" class="body"/>
+    <!-- mast tube center -->
+    <rect x="320" y="360" width="60" height="60" class="accent"/>
+    <text x="335" y="395" class="lbl" font-size="11">MAST</text>
+
+    <!-- 4 outrigger arms deployed at 90 deg -->
+    <!-- Front (down) -->
+    <rect x="335" y="470" width="30" height="170" class="arm"/>
+    <circle cx="350" cy="640" r="22" fill="#f0a000" stroke="#111" stroke-width="1.5"/>
+    <text x="343" y="645" class="lbl" font-size="11">F</text>
+    <!-- Back (up) -->
+    <rect x="335" y="140" width="30" height="170" class="arm"/>
+    <circle cx="350" cy="140" r="22" fill="#f0a000" stroke="#111" stroke-width="1.5"/>
+    <text x="343" y="145" class="lbl" font-size="11">B</text>
+    <!-- Left -->
+    <rect x="100" y="375" width="170" height="30" class="arm"/>
+    <circle cx="100" cy="390" r="22" fill="#f0a000" stroke="#111" stroke-width="1.5"/>
+    <text x="93" y="395" class="lbl" font-size="11">L</text>
+    <!-- Right -->
+    <rect x="430" y="375" width="170" height="30" class="arm"/>
+    <circle cx="600" cy="390" r="22" fill="#f0a000" stroke="#111" stroke-width="1.5"/>
+    <text x="593" y="395" class="lbl" font-size="11">R</text>
+
+    <!-- pivots -->
+    <circle cx="350" cy="470" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="350" cy="310" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="270" cy="390" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="430" cy="390" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+
+    <!-- DIM front-back: 52 in -->
+    <line x1="660" y1="140" x2="660" y2="640" class="dim"/>
+    <polygon points="660,140 654,155 666,155" fill="#8B0000"/>
+    <polygon points="660,640 654,625 666,625" fill="#8B0000"/>
+    <text x="670" y="395" class="dimt">52 in</text>
+    <text x="670" y="412" class="dimt">1,321 mm</text>
+
+    <!-- DIM left-right: 48 in -->
+    <line x1="100" y1="700" x2="600" y2="700" class="dim"/>
+    <polygon points="100,700 115,694 115,706" fill="#8B0000"/>
+    <polygon points="600,700 585,694 585,706" fill="#8B0000"/>
+    <text x="290" y="724" class="dimt">48 in / 1,219 mm</text>
+
+    <!-- arm length -->
+    <line x1="350" y1="100" x2="600" y2="100" class="dim"/>
+    <polygon points="350,100 365,94 365,106" fill="#8B0000"/>
+    <polygon points="600,100 585,94 585,106" fill="#8B0000"/>
+    <text x="430" y="92" class="dimt">17 in arm extension (typ. 4 places)</text>
+
+    <!-- center label -->
+    <text x="700" y="780" class="lbl" font-size="13" fill="#666">Center of Gravity envelope</text>
+    <polygon points="350,140 600,390 350,640 100,390" class="ghost" fill="#fff7e0"/>
+  </g>
+
+  <!-- RIGHT: stowed -->
+  <text x="1230" y="135" class="lbl" font-weight="bold">RIGHT: STOWED FOOTPRINT 32 in WIDE</text>
+  <g transform="translate(1100,170)">
+    <line x1="350" y1="0" x2="350" y2="780" class="center"/>
+    <line x1="0" y1="390" x2="700" y2="390" class="center"/>
+
+    <!-- main base body -->
+    <rect x="270" y="310" width="160" height="160" class="body"/>
+    <rect x="320" y="360" width="60" height="60" class="accent"/>
+
+    <!-- arms folded along base length -->
+    <rect x="270" y="290" width="160" height="14" class="arm"/>
+    <rect x="270" y="476" width="160" height="14" class="arm"/>
+    <rect x="251" y="310" width="14" height="160" class="arm"/>
+    <rect x="435" y="310" width="14" height="160" class="arm"/>
+
+    <!-- pivot dots -->
+    <circle cx="350" cy="470" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="350" cy="310" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="270" cy="390" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <circle cx="430" cy="390" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+
+    <!-- transport wheels -->
+    <rect x="305" y="498" width="20" height="40" fill="#222"/>
+    <rect x="375" y="498" width="20" height="40" fill="#222"/>
+
+    <!-- dim stowed width -->
+    <line x1="251" y1="600" x2="449" y2="600" class="dim"/>
+    <polygon points="251,600 266,594 266,606" fill="#8B0000"/>
+    <polygon points="449,600 434,594 434,606" fill="#8B0000"/>
+    <text x="285" y="624" class="dimt">31.5 in / 800 mm</text>
+
+    <line x1="500" y1="290" x2="500" y2="490" class="dim"/>
+    <polygon points="500,290 494,305 506,305" fill="#8B0000"/>
+    <polygon points="500,490 494,475 506,475" fill="#8B0000"/>
+    <text x="510" y="395" class="dimt">31.5 in</text>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(60,940)">
+    <rect x="0" y="0" width="640" height="120" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">LEGEND</text>
+    <rect x="10" y="34" width="20" height="14" class="body"/>
+    <text x="40" y="46" class="lbl">Cast aluminum base body, 6061-T6</text>
+    <rect x="10" y="56" width="20" height="14" class="arm"/>
+    <text x="40" y="68" class="lbl">Welded steel outrigger arm, A500 HSS 2x2</text>
+    <circle cx="20" cy="86" r="9" fill="#f0a000" stroke="#111"/>
+    <text x="40" y="90" class="lbl">Cam-lock leveling foot, 1/2 in vertical adjust</text>
+    <circle cx="20" cy="108" r="6" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="40" y="112" class="lbl">Outrigger pivot, sealed bushing</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KL-100-003</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Base / Outrigger</text>
+    <text x="225" y="92" class="lbl">Top Down, 2 states</text>
+    <text x="225" y="128" class="lbl">1:8 nominal</text>
+  </g>
+</svg>

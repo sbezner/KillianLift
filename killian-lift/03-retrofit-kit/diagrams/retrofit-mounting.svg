@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .body { fill: #d6dfe8; stroke: #111; stroke-width: 2; }
+    .body2 { fill: #b5bfc9; stroke: #111; stroke-width: 2; }
+    .accent { fill: #f0a000; stroke: #111; stroke-width: 1.5; }
+    .new { fill: #b8d8ff; stroke: #003a8c; stroke-width: 2; }
+    .new2 { fill: #c8e0ff; stroke: #003a8c; stroke-width: 2; }
+    .ghost { fill: none; stroke: #888; stroke-width: 1; stroke-dasharray: 6 4; }
+    .dim { fill: none; stroke: #8B0000; stroke-width: 1; }
+    .dimt { fill: #8B0000; font-size: 14px; }
+    .lbl { fill: #111; font-size: 14px; }
+    .lblb { fill: #111; font-size: 14px; font-weight: bold; }
+    .leader { stroke: #111; stroke-width: 0.8; fill: none; }
+    .title { fill: #111; font-size: 22px; font-weight: bold; }
+    .center { fill: none; stroke: #111; stroke-width: 0.6; stroke-dasharray: 12 4 2 4; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+
+  <text x="40" y="50" class="title">KILLIAN SMART KIT - RETROFIT MOUNTING TO SUMNER ROUST-A-BOUT R-250</text>
+  <text x="40" y="78" class="lbl">Replaces hand crank with brushless DC drive on the load winch shaft. No mast modification. 30 minute install.</text>
+
+  <text x="200" y="130" class="lblb">A. EXISTING R-250 LOAD WINCH (BEFORE)</text>
+  <text x="1100" y="130" class="lblb">B. KIT INSTALLED (AFTER)</text>
+
+  <!-- Existing -->
+  <g transform="translate(120,170)">
+    <!-- mast partial -->
+    <rect x="380" y="0" width="80" height="600" class="body"/>
+    <line x1="420" y1="0" x2="420" y2="600" class="center"/>
+
+    <!-- existing winch on side of mast -->
+    <rect x="200" y="280" width="180" height="120" class="body2"/>
+    <text x="225" y="334" class="lbl">EXISTING WINCH</text>
+    <text x="225" y="354" class="lbl" font-size="11">Sumner OEM, chain-drive</text>
+
+    <!-- existing crank handle -->
+    <circle cx="100" cy="340" r="40" class="body2"/>
+    <line x1="100" y1="340" x2="100" y2="280" stroke="#111" stroke-width="3"/>
+    <circle cx="100" cy="280" r="14" fill="#222"/>
+    <text x="40" y="420" class="lbl">HAND CRANK</text>
+    <text x="40" y="438" class="lbl" font-size="11">to be removed</text>
+
+    <line x1="180" y1="340" x2="200" y2="340" stroke="#111" stroke-width="2"/>
+    <line x1="100" y1="340" x2="200" y2="340" stroke="#111" stroke-width="2"/>
+
+    <!-- chain output to drum (down to base) -->
+    <rect x="350" y="500" width="120" height="80" class="body2"/>
+    <text x="370" y="540" class="lbl">DRUM</text>
+
+    <!-- chain -->
+    <path d="M 290 400 Q 290 460 400 500" stroke="#222" stroke-width="3" fill="none"/>
+
+    <!-- callouts -->
+    <line x1="290" y1="280" x2="290" y2="200" class="leader"/>
+    <text x="220" y="190" class="lbl">Existing input shaft 5/8 in square</text>
+
+    <line x1="100" y1="380" x2="100" y2="500" class="leader"/>
+    <text x="60" y="520" class="lbl" fill="#cc0000" font-weight="bold">REMOVED IN STEP 1</text>
+  </g>
+
+  <!-- After -->
+  <g transform="translate(1000,170)">
+    <!-- mast partial -->
+    <rect x="380" y="0" width="80" height="600" class="body"/>
+    <line x1="420" y1="0" x2="420" y2="600" class="center"/>
+
+    <!-- existing winch (kept) -->
+    <rect x="200" y="280" width="180" height="120" class="body2"/>
+    <text x="225" y="334" class="lbl">EXISTING WINCH</text>
+    <text x="225" y="354" class="lbl" font-size="11">Sumner OEM, untouched</text>
+
+    <!-- mounting plate (NEW) -->
+    <rect x="-30" y="200" width="240" height="280" class="new" rx="6"/>
+    <text x="-20" y="226" class="lblb" fill="#003a8c">KIT MOUNTING BRACKET</text>
+    <text x="-20" y="244" class="lbl" font-size="11" fill="#003a8c">Powder-coated steel, fits stock holes</text>
+
+    <!-- BLDC motor + gearbox (NEW) -->
+    <rect x="40" y="280" width="160" height="120" class="new2" rx="6"/>
+    <circle cx="120" cy="340" r="40" fill="#444" stroke="#111" stroke-width="2"/>
+    <circle cx="120" cy="340" r="20" fill="#666"/>
+    <circle cx="120" cy="340" r="8" fill="#222"/>
+    <text x="58" y="295" class="lblb" font-size="12" fill="#003a8c">BLDC + 20:1 GEARBOX</text>
+
+    <!-- coupler from gearbox to winch shaft -->
+    <rect x="180" y="332" width="40" height="16" fill="#888" stroke="#111"/>
+    <rect x="200" y="328" width="20" height="24" fill="#222" stroke="#111"/>
+
+    <!-- battery sled on bracket -->
+    <rect x="-20" y="220" width="240" height="50" class="accent"/>
+    <text x="-10" y="252" class="lbl" font-size="11">BATTERY SLED (FlexVolt or M18)</text>
+
+    <!-- backup hex input -->
+    <polygon points="40,340 20,348 0,340 0,332 20,324 40,332" fill="#444" stroke="#111"/>
+    <text x="-50" y="376" class="lbl" font-size="11">7/16 HEX BACKUP</text>
+
+    <!-- control box (NEW) -->
+    <rect x="40" y="420" width="160" height="60" class="new" rx="4"/>
+    <text x="50" y="442" class="lblb" font-size="12" fill="#003a8c">CONTROL BOX</text>
+    <text x="50" y="458" class="lbl" font-size="11" fill="#003a8c">ESP32, sensors, FETs</text>
+    <text x="50" y="472" class="lbl" font-size="11" fill="#003a8c">CAN to pendant</text>
+
+    <!-- pendant (NEW) -->
+    <rect x="-150" y="490" width="60" height="100" rx="6" fill="#222"/>
+    <circle cx="-120" cy="510" r="10" fill="#f0a000"/>
+    <rect x="-138" y="530" width="36" height="8" fill="#aaa"/>
+    <rect x="-138" y="544" width="36" height="8" fill="#aaa"/>
+    <rect x="-138" y="560" width="36" height="8" fill="#cc0000"/>
+    <text x="-150" y="610" class="lbl" font-size="11">PENDANT (NEW)</text>
+
+    <!-- coiled cable -->
+    <path d="M -90 510 Q 0 470 40 450" stroke="#111" stroke-width="1.4" fill="none"/>
+
+    <!-- callouts -->
+    <line x1="100" y1="240" x2="100" y2="160" class="leader"/>
+    <text x="20" y="148" class="lblb" fill="#003a8c">[N1] Single 4-bolt bracket, 1/4-20 SHCS</text>
+
+    <line x1="180" y1="340" x2="280" y2="180" class="leader"/>
+    <text x="270" y="170" class="lblb" fill="#003a8c">[N2] Coupler torque-limited at 200%</text>
+
+    <line x1="0" y1="340" x2="-100" y2="340" class="leader"/>
+    <text x="-260" y="320" class="lbl" font-size="11">7/16 hex preserves OEM</text>
+    <text x="-260" y="338" class="lbl" font-size="11">drill / hand-crank backup</text>
+
+    <line x1="120" y1="450" x2="240" y2="500" class="leader"/>
+    <text x="250" y="500" class="lblb" fill="#003a8c">[N3] Control box mounts above winch</text>
+    <text x="250" y="518" class="lbl" font-size="11" fill="#003a8c">in dead space, no interference</text>
+  </g>
+
+  <!-- INSTALL STEPS -->
+  <g transform="translate(80,820)">
+    <rect x="0" y="0" width="1400" height="200" fill="none" stroke="#111"/>
+    <text x="10" y="22" class="lblb">INSTALLATION SEQUENCE (target 30 min)</text>
+    <text x="10" y="48" class="lbl">1. Remove existing 5/8 in hand crank handle (1 set screw, 1 retaining clip).</text>
+    <text x="10" y="68" class="lbl">2. Bolt kit mounting bracket to stock M8 holes on mast saddle (4 places).</text>
+    <text x="10" y="88" class="lbl">3. Slip 5/8 in square coupler over OEM winch shaft. Snug grub screw.</text>
+    <text x="10" y="108" class="lbl">4. Lower BLDC + gearbox onto bracket, align with coupler, secure 4x SHCS.</text>
+    <text x="10" y="128" class="lbl">5. Snap control box into bracket cradle. Plug pre-terminated harness into motor and pendant ports.</text>
+    <text x="10" y="148" class="lbl">6. Insert FlexVolt or M18 battery into sled. Power-on self-test runs automatically (load cell zero, tilt cal).</text>
+    <text x="10" y="168" class="lbl">7. Function test: lift empty fork to 5 ft and back down. Pendant E-stop verified. Done.</text>
+    <text x="10" y="188" class="lbl" font-style="italic">Reversible: kit unbolts in 5 min. Hand crank can be reinstalled. No drilling, no welding, no chassis modification.</text>
+  </g>
+
+  <!-- TITLE BLOCK -->
+  <g transform="translate(1450,920)">
+    <rect x="0" y="0" width="430" height="140" fill="none" stroke="#111" stroke-width="1.5"/>
+    <line x1="0" y1="35" x2="430" y2="35" stroke="#111"/>
+    <line x1="0" y1="70" x2="430" y2="70" stroke="#111"/>
+    <line x1="0" y1="105" x2="430" y2="105" stroke="#111"/>
+    <line x1="215" y1="0" x2="215" y2="140" stroke="#111"/>
+    <text x="10" y="22" class="lbl" font-weight="bold">DRAWING</text>
+    <text x="10" y="58" class="lbl">KSK-200-001</text>
+    <text x="10" y="92" class="lbl">REV A</text>
+    <text x="10" y="128" class="lbl">2026-05-09</text>
+    <text x="225" y="22" class="lbl" font-weight="bold">TITLE</text>
+    <text x="225" y="58" class="lbl">Smart Kit Mount</text>
+    <text x="225" y="92" class="lbl">Before / After</text>
+    <text x="225" y="128" class="lbl">R-250 retrofit</text>
+  </g>
+</svg>
